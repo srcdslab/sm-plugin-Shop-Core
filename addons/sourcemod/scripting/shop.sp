@@ -6,7 +6,7 @@
 #tryinclude <SteamWorks>
 #define REQUIRE_EXTENSIONS
 
-#define SHOP_VERSION "3.0E10"
+#define SHOP_VERSION "3.0E11"
 #define SHOP_MYSQL_CHARSET "utf8mb4"
 
 #pragma newdecls required
