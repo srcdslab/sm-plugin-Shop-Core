@@ -225,6 +225,7 @@ public Action DB_ReconnectTimer(Handle timer)
 
 DataPack upgrade_dp;
 DataPack insert_dp;
+int g_iPendingCategoryFetches;
 public void DB_Connect(Database db, const char[] error, any data)
 {
 	h_db = db;
@@ -693,8 +694,6 @@ public void DB_UgradeState_1(Database db, DBResultSet results, const char[] erro
 
 	delete categories;
 }
-
-int g_iPendingCategoryFetches;
 
 public void DB_OnCategoryItemsFetched(Database db, DBResultSet results, const char[] error, any data)
 {
