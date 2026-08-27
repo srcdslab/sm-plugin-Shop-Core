@@ -204,22 +204,13 @@ void DB_TryConnect()
 	}
 	
 	isLoading = true;
-	
+
 	PrintToServer("[Shop] Trying to connect!");
-	
-	if (SQL_CheckConfig("shop"))
-	{
-		Database.Connect(DB_Connect, "shop", 1);
-	}
-	else
-	{
-		char error[256];
-		error[0] = '\0';
-		
-		h_db = SQLite_UseDatabase("shop", error, sizeof(error));
-		
-		DB_Connect(h_db, error, 2);
-	}
+
+	// Database.Connect() implicitly falls back to a local SQLite database
+	// named "shop" when no matching entry exists in databases.cfg, so this
+	// single async call covers both the MySQL and SQLite cases.
+	Database.Connect(DB_Connect, "shop", 1);
 }
 
 public Action DB_ReconnectTimer(Handle timer)
@@ -511,10 +502,8 @@ stock void DB_FastQuery(const char[] query)
 		WriteBackUp(DB_ErrorCheck, query, 0, DBPrio_Normal);
 		return;
 	}
-	
-	SQL_LockDatabase(h_db);
-	SQL_FastQuery(h_db, query);
-	SQL_UnlockDatabase(h_db);
+
+	h_db.Query(DB_ErrorCheck, query, _, DBPrio_Normal);
 }
 
 void WriteBackUp(SQLQueryCallback callback, const char[] query, any data = 0, DBPriority prio)
@@ -611,12 +600,14 @@ public void DB_UgradeState_1(Database db, DBResultSet results, const char[] erro
 	}
 	
 	PrintToServer("[Shop] Reading old tables...");
-	
+
 	upgrade_dp = new DataPack();
 	insert_dp = new DataPack();
-	
+
+	ArrayList categories = new ArrayList(ByteCountToCells(64));
+
 	bool got_categories;
-	char category[64], item[64], buffer[2048], part[128];
+	char category[64], buffer[2048], part[128];
 	int id;
 	while (results.FetchRow())
 	{
@@ -624,43 +615,30 @@ public void DB_UgradeState_1(Database db, DBResultSet results, const char[] erro
 		for (int i = 1; i < results.FieldCount; i++)
 		{
 			results.FieldNumToName(i, category, sizeof(category));
-			
+
 			if (!got_categories)
 			{
-				SQL_LockDatabase(h_db);
-				h_db.Format(buffer, sizeof(buffer), "SELECT `item` FROM `%s`;", category);
-				DBResultSet hQuery = SQL_Query(h_db, buffer);
-				if (hQuery != null)
-				{
-					while (hQuery.FetchRow())
-					{
-						hQuery.FetchString(0, item, sizeof(item));
-						
-						h_db.Format(buffer, sizeof(buffer), "INSERT INTO `%sitems` (`category`, `item`) VALUES ('%s', '%s');", g_sDbPrefix, category, item);
-						insert_dp.WriteString(buffer);
-					}
-					delete hQuery;
-				}
-				SQL_UnlockDatabase(h_db);
+				categories.PushString(category);
 			}
-			
+
 			results.FetchString(i, buffer, sizeof(buffer));
-			
+
 			int num, item_id;
 			int itemId[256], count[256], duration[256];
-			
+
 			int reloc_idx = 0, var2 = 0;
 			while ((var2 = SplitString(buffer[reloc_idx], ",", part, sizeof(part))) != -1)
 			{
 				reloc_idx += var2;
 				if (!part[0]) continue;
-				
+
 				int ture = FindCharInString(part, '-');
 				if (ture != -1)
 				{
+					char item[64];
 					ture++;
 					strcopy(item, ture, part);
-					
+
 					item_id = StringToInt(item);
 					duration[item_id] = StringToInt(part[ture]);
 				}
@@ -674,22 +652,83 @@ public void DB_UgradeState_1(Database db, DBResultSet results, const char[] erro
 				}
 				count[item_id]++;
 			}
-			
+
 			for (int x = 0; x < num; x++)
 			{
 				h_db.Format(buffer, sizeof(buffer), "INSERT INTO `%sboughts` (`player_id`, `item_id`, `count`, `duration`, `timeleft`, `buy_price`, `sell_price`, `buy_time`) VALUES \
-												('%d', (SELECT `id` FROM `%sitems` WHERE `category` = '%s' AND `item` = (SELECT `item` FROM `%s` WHERE `id` = '%d')), '%d', '%d', '%d', '0', '-1', '%d');", 
+												('%d', (SELECT `id` FROM `%sitems` WHERE `category` = '%s' AND `item` = (SELECT `item` FROM `%s` WHERE `id` = '%d')), '%d', '%d', '%d', '0', '-1', '%d');",
 												g_sDbPrefix, id, g_sDbPrefix, category, category, itemId[x], count[itemId[x]], duration[itemId[x]], duration[itemId[x]], global_timer);
 				upgrade_dp.WriteString(buffer);
 			}
 		}
-		
+
 		got_categories = true;
 	}
-	
-	h_db.Format(buffer, sizeof(buffer), "DROP TABLE `%sitems`;", g_sDbPrefix);
-	DB_TQueryEx(buffer, DBPrio_High);
-	
+
+	// Fetch each legacy per-category items table asynchronously instead of
+	// blocking the game thread with a nested SQL_Query() per category.
+	if (categories.Length == 0)
+	{
+		delete categories;
+
+		h_db.Format(buffer, sizeof(buffer), "DROP TABLE `%sitems`;", g_sDbPrefix);
+		DB_TQueryEx(buffer, DBPrio_High);
+
+		DB_CreateTables();
+		return;
+	}
+
+	g_iPendingCategoryFetches = categories.Length;
+
+	for (int i = 0; i < categories.Length; i++)
+	{
+		categories.GetString(i, category, sizeof(category));
+
+		h_db.Format(buffer, sizeof(buffer), "SELECT `item` FROM `%s`;", category);
+
+		DataPack dp = new DataPack();
+		dp.WriteString(category);
+		h_db.Query(DB_OnCategoryItemsFetched, buffer, dp);
+	}
+
+	delete categories;
+}
+
+int g_iPendingCategoryFetches;
+
+public void DB_OnCategoryItemsFetched(Database db, DBResultSet results, const char[] error, any data)
+{
+	DataPack dp = view_as<DataPack>(data);
+	dp.Reset();
+	char category[64];
+	dp.ReadString(category, sizeof(category));
+	delete dp;
+
+	if (error[0])
+	{
+		LogError("DB_OnCategoryItemsFetched (%s): %s", category, error);
+	}
+	else
+	{
+		char item[64], buffer[2048];
+		while (results.FetchRow())
+		{
+			results.FetchString(0, item, sizeof(item));
+
+			h_db.Format(buffer, sizeof(buffer), "INSERT INTO `%sitems` (`category`, `item`) VALUES ('%s', '%s');", g_sDbPrefix, category, item);
+			insert_dp.WriteString(buffer);
+		}
+	}
+
+	if (--g_iPendingCategoryFetches > 0)
+	{
+		return;
+	}
+
+	char buffer2[256];
+	h_db.Format(buffer2, sizeof(buffer2), "DROP TABLE `%sitems`;", g_sDbPrefix);
+	DB_TQueryEx(buffer2, DBPrio_High);
+
 	DB_CreateTables();
 }
 
