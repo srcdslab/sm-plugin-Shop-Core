@@ -6,7 +6,7 @@
 #tryinclude <SteamWorks>
 #define REQUIRE_EXTENSIONS
 
-#define SHOP_VERSION "3.0E10"
+#define SHOP_VERSION "3.0E11"
 #define SHOP_MYSQL_CHARSET "utf8mb4"
 
 #pragma newdecls required
@@ -2207,11 +2207,6 @@ void TQuery(SQLQueryCallback callback, const char[] query, any data = 0, DBPrior
 void TQueryEx(const char[] query, DBPriority prio = DBPrio_Normal)
 {
 	DB_TQueryEx(query, prio);
-}
-
-void EscapeString(const char[] string, char[] sBuffer, int maxlength, int &written = 0)
-{
-	DB_EscapeString(string, sBuffer, maxlength, written);
 }
 
 bool CheckClient(int client, char[] error, int length)
