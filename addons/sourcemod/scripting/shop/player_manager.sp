@@ -1089,9 +1089,8 @@ public void PlayerManager_OnPlayerName(Event event, const char[] name, bool dont
 	int client = GetClientOfUserId(event.GetInt("userid"));
 	if (!client || !i_Id[client]) return;
 	
-	char newname[MAX_NAME_LENGTH*2+1], s_Query[256];
-	event.GetString("newname", s_Query, sizeof(s_Query));
-	EscapeString(s_Query, newname, sizeof(newname));
+	char newname[MAX_NAME_LENGTH], s_Query[256];
+	event.GetString("newname", newname, sizeof(newname));
 	h_db.Format(s_Query, sizeof(s_Query), "UPDATE `%splayers` SET `name` = '%s' WHERE `id` = '%i';", g_sDbPrefix, newname, i_Id[client]);
 	TQueryEx(s_Query, DBPrio_Low);
 }
@@ -1180,10 +1179,9 @@ public void PlayerManager_AuthorizeClient(Database owner, DBResultSet hndl, cons
 	{
 		case 0 :
 		{
-			char name[MAX_NAME_LENGTH], buffer[65];
+			char name[MAX_NAME_LENGTH];
 			GetClientName(client, name, sizeof(name));
-			EscapeString(name, buffer, sizeof(buffer));
-			
+
 			char s_Query[256];
 			if (!hndl.FetchRow())
 			{
@@ -1193,7 +1191,7 @@ public void PlayerManager_AuthorizeClient(Database owner, DBResultSet hndl, cons
 				dp.WriteCell(1);
 				dp.WriteCell(g_iStartCredits);
 				
-				h_db.Format(s_Query, sizeof(s_Query), "INSERT INTO `%splayers` (`name`, `auth`, `money`, `lastconnect`) VALUES ('%s', '%s', '%d', '%d');", g_sDbPrefix, buffer, auth, g_iStartCredits, global_timer);
+				h_db.Format(s_Query, sizeof(s_Query), "INSERT INTO `%splayers` (`name`, `auth`, `money`, `lastconnect`) VALUES ('%s', '%s', '%d', '%d');", g_sDbPrefix, name, auth, g_iStartCredits, global_timer);
 				TQuery(PlayerManager_AuthorizeClient, s_Query, dp);
 				
 				return;
@@ -1204,7 +1202,7 @@ public void PlayerManager_AuthorizeClient(Database owner, DBResultSet hndl, cons
 			iCredits[client] = hndl.FetchInt(0);
 			i_Id[client] = hndl.FetchInt(1);
 
-			h_db.Format(s_Query, sizeof(s_Query), "UPDATE `%splayers` SET `name` = '%s', `lastconnect` = '%d' WHERE `id` = '%i';", g_sDbPrefix, buffer, global_timer, i_Id[client]);
+			h_db.Format(s_Query, sizeof(s_Query), "UPDATE `%splayers` SET `name` = '%s', `lastconnect` = '%d' WHERE `id` = '%i';", g_sDbPrefix, name, global_timer, i_Id[client]);
 			TQueryEx(s_Query);
 			
 			PlayerManager_LoadClientToggles(client);
