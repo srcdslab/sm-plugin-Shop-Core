@@ -2209,11 +2209,6 @@ void TQueryEx(const char[] query, DBPriority prio = DBPrio_Normal)
 	DB_TQueryEx(query, prio);
 }
 
-void EscapeString(const char[] string, char[] sBuffer, int maxlength, int &written = 0)
-{
-	DB_EscapeString(string, sBuffer, maxlength, written);
-}
-
 bool CheckClient(int client, char[] error, int length)
 {
 	return Helpers_CheckClient(client, error, length);
