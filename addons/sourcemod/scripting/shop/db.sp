@@ -540,11 +540,6 @@ void DB_TQueryEx(const char[] query, DBPriority prio = DBPrio_Normal)
 	h_db.Query(DB_ErrorCheck, query, _, prio);
 }
 
-void DB_EscapeString(const char[] string, char[] buffer, int maxlength, int &written=0)
-{
-	h_db.Escape(string, buffer, maxlength, written);
-}
-
 void DB_RunBackup()
 {
 	ArrayList ar = ar_backups.Clone();
