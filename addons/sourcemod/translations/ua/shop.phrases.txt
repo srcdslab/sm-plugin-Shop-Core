@@ -211,7 +211,7 @@
 
 	"MenuEmptyCategory"
 	{
-		"en"    	"Категорія порожня!"
+		"ua"    	"Категорія порожня!"
 	}
 
 	"NothingToLuck"
