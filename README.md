@@ -1,13 +1,3 @@
-> The 🇷🇺 Russian invasion of 🇺🇦 Ukraine breaches any law, including the UN Charter. [#StandWithUkraine](https://github.com/vshymanskyy/StandWithUkraine)
-
-# [Shop Core](https://hlmod.ru/threads/shop-core-fork.38351/)
-
-| Status |
-|:------:|
-| Passive updates |
-
-[![Build](https://github.com/hlmod/Shop-Core/actions/workflows/build.yml/badge.svg)](https://github.com/hlmod/Shop-Core/actions/workflows/build.yml) [![Discord](https://img.shields.io/discord/315148933792006144.svg)](https://discord.gg/NTrASWm) [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
-
 ## Requirements
 - [SourceMod](https://www.sourcemod.net/downloads.php?branch=stable) 1.10+
 - Database section in `addons/sourcemod/configs/databases.cfg`
