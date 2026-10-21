@@ -307,7 +307,6 @@ public void DB_CheckTable(Database db, DBResultSet results, const char[] error, 
 	{
 		LogError("DB_CheckTable: %s", error);
 		delete h_db;
-		h_db = null;
 		CreateTimer(15.0, DB_ReconnectTimer);
 		isLoading = false;
 		return;
@@ -344,7 +343,6 @@ public void DB_CheckTable2(Database db, DBResultSet results, const char[] error,
 	{
 		LogError("DB_CheckTable2: %s", error);
 		delete h_db;
-		h_db = null;
 		CreateTimer(15.0, DB_ReconnectTimer);
 		isLoading = false;
 		return;
@@ -470,7 +468,6 @@ public void DB_OnPlayersTableLoad(Database db, DBResultSet results, const char[]
 	{
 		LogError("DB_OnPlayersTableLoad %d: %s", data, error);
 		delete h_db;
-		h_db = null;
 		CreateTimer(15.0, DB_ReconnectTimer);
 		return;
 	}
@@ -734,14 +731,13 @@ void DB_RunUpgrade()
 	char buffer[256];
 	
 	insert_dp.Reset();
-	while (IsPackReadable(insert_dp, 1))
+	while (insert_dp.IsReadable(1))
 	{
 		insert_dp.ReadString(buffer, sizeof(buffer));
 		DB_TQuery(DB_UgradeState_2, buffer);
 		num_queries++;
 	}
 	delete insert_dp;
-	insert_dp = null;
 }
 
 int num_queries2;
@@ -763,7 +759,7 @@ public void DB_UgradeState_2(Database db, DBResultSet results, const char[] erro
 	
 	upgrade_dp.Reset();
 	
-	while (IsPackReadable(upgrade_dp, 1))
+	while (upgrade_dp.IsReadable(1))
 	{
 		upgrade_dp.ReadString(buffer, sizeof(buffer));
 		DB_TQuery(DB_UgradeState_3, buffer, DBPrio_High);
@@ -771,7 +767,6 @@ public void DB_UgradeState_2(Database db, DBResultSet results, const char[] erro
 	}
 	
 	delete upgrade_dp;
-	upgrade_dp = null;
 }
 
 public void DB_UgradeState_3(Database db, DBResultSet results, const char[] error, any data)

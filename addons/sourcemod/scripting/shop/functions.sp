@@ -158,7 +158,7 @@ void Functions_ShowMenu(int client, int pos = 0)
 	
 	int credits = GetCredits(client);
 	
-	Menu menu = CreateMenu(Functions_Menu_Handler);
+	Menu menu = new Menu(Functions_Menu_Handler);
 	
 	char buffer[128];
 	FormatEx(buffer, sizeof(buffer), "%t\n%t", "functions", "credits", credits);
@@ -348,7 +348,7 @@ bool Functions_ShowCreditsTransferMenu(int client)
 	
 	int credits = GetCredits(client);
 	
-	Menu menu = CreateMenu(Functions_MenuCreditsTransfer_Handler);
+	Menu menu = new Menu(Functions_MenuCreditsTransfer_Handler);
 	
 	char buffer[128];
 	FormatEx(buffer, sizeof(buffer), "%t\n%t", "trans_credits", "credits", credits);
