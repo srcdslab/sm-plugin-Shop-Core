@@ -177,19 +177,21 @@ void SayText2(int client, int iAuthor = 0, const char[] sMessage)
 	hBuffer = StartMessage("SayText2", clients, 1, USERMSG_RELIABLE|USERMSG_BLOCKHOOKS);
 	if(bProto)
 	{
-		PbSetInt(hBuffer, "ent_idx", iAuthor);
-		PbSetBool(hBuffer, "chat", true);
-		PbSetString(hBuffer, "msg_name", sMessage);
-		PbAddString(hBuffer, "params", "");
-		PbAddString(hBuffer, "params", "");
-		PbAddString(hBuffer, "params", "");
-		PbAddString(hBuffer, "params", "");
+		Protobuf pb = UserMessageToProtobuf(hBuffer);
+		pb.SetInt("ent_idx", iAuthor);
+		pb.SetBool("chat", true);
+		pb.SetString("msg_name", sMessage);
+		pb.AddString("params", "");
+		pb.AddString("params", "");
+		pb.AddString("params", "");
+		pb.AddString("params", "");
 	}
 	else
 	{
-		BfWriteByte(hBuffer, iAuthor);
-		BfWriteByte(hBuffer, true);
-		BfWriteString(hBuffer, sMessage);
+		BfWrite bf = UserMessageToBfWrite(hBuffer);
+		bf.WriteByte(iAuthor);
+		bf.WriteByte(true);
+		bf.WriteString(sMessage);
 	}
 	EndMessage();
 }

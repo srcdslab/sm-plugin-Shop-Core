@@ -6,7 +6,7 @@
 #tryinclude <SteamWorks>
 #define REQUIRE_EXTENSIONS
 
-#define SHOP_VERSION "3.0E13"
+#define SHOP_VERSION "3.1E13"
 #define SHOP_MYSQL_CHARSET "utf8mb4"
 
 #pragma newdecls required
@@ -304,13 +304,11 @@ public void OnMapStart()
 	if (panel_info != null)
 	{
 		delete panel_info;
-		panel_info = null;
 	}
 	
 	if (g_hSortArray != null)
 	{
 		delete g_hSortArray;
-		g_hSortArray = null;
 	}
 	
 	char sBuffer[PLATFORM_MAX_PATH];
@@ -360,7 +358,6 @@ public void OnMapStart()
 		if(!g_hSortArray.Length)
 		{
 			delete g_hSortArray;
-			g_hSortArray = null;
 		}
 
 		delete hFile;
@@ -577,7 +574,7 @@ bool ShowInventory(int client)
 	
 	iClMenuId[client] = Menu_Inventory;
 	
-	DisplayMenu(menu, client, MENU_TIME_FOREVER);
+	menu.Display(client, MENU_TIME_FOREVER);
 	
 	return true;
 }
@@ -636,7 +633,7 @@ bool ShowCategories(int client)
 	
 	iClMenuId[client] = Menu_Buy;
 	
-	DisplayMenu(menu, client, MENU_TIME_FOREVER);
+	menu.Display(client, MENU_TIME_FOREVER);
 	
 	return true;
 }

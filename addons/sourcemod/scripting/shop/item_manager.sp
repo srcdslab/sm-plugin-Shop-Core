@@ -131,7 +131,7 @@ void ItemManager_OnPluginStart()
 
 public Action ItemManager_Dump(int argc)
 {
-	KeyValuesToFile(h_KvItems, "addons/items.txt");
+	h_KvItems.ExportToFile("addons/items.txt");
 	return Plugin_Handled;
 }
 
@@ -647,7 +647,7 @@ public int ItemManager_UnregisterItem(Handle plugin, int numParams)
 	return 0;
 }
 
-public int ItemManager_OnItemRegistered(Handle owner, Handle hndl, const char[] error, DataPack dp)
+public int ItemManager_OnItemRegistered(Handle owner, DBResultSet hndl, const char[] error, DataPack dp)
 {
 	char category[SHOP_MAX_STRING_LENGTH], item[SHOP_MAX_STRING_LENGTH];
 	
@@ -687,7 +687,7 @@ public int ItemManager_OnItemRegistered(Handle owner, Handle hndl, const char[] 
 	{
 		case 0:
 		{
-			if (!SQL_FetchRow(hndl))
+			if (!hndl.FetchRow())
 			{
 				char s_Query[256];
 				h_db.Format(s_Query, sizeof(s_Query), "INSERT INTO `%sitems` (`category`, `item`) VALUES ('%s', '%s');", g_sDbPrefix, category, item);
@@ -707,7 +707,7 @@ public int ItemManager_OnItemRegistered(Handle owner, Handle hndl, const char[] 
 				return 0;
 			}
 			
-			id = SQL_FetchInt(hndl, 0);
+			id = hndl.FetchInt(0);
 		}
 		case 1:
 		{
@@ -722,7 +722,7 @@ public int ItemManager_OnItemRegistered(Handle owner, Handle hndl, const char[] 
 	
 	h_KvItems.Rewind();
 	h_KvItems.JumpToKey(buffer, true);
-	KvCopySubkeys(kv, h_KvItems);
+	h_KvItems.Import(kv);
 	h_KvItems.Rewind();
 	
 	delete kv;
@@ -819,7 +819,7 @@ public int ItemManager_KvCopySubKeysItemCustomInfo(Handle plugin, int numParams)
 		ThrowNativeError(SP_ERROR_NATIVE, "Item id %s is invalid", buffer);
 	
 	KeyValues origin_kv = GetNativeCell(2);
-	if(origin_kv == INVALID_HANDLE) 
+	if(origin_kv == null) 
 		ThrowNativeError(SP_ERROR_NATIVE, "Handle is invalid!");
 
 	h_KvItems.JumpToKey("CustomInfo", true);
@@ -1309,7 +1309,7 @@ public int ItemManager_FillArrayByItemsNative(Handle plugin, int numParams)
 	if (h_Array == null)
 		ThrowNativeError(SP_ERROR_NATIVE, "Handle is invalid!");
 	
-	ClearArray(h_Array);
+	h_Array.Clear();
 	return ItemManager_FillArrayByItems(h_Array);
 }
 
@@ -2504,7 +2504,7 @@ ArrayList ItemManager_GetItemIdArrayFromPlugin(Handle plugin)
 		ArrayList array = new ArrayList(1);
 		KeyValues kv = new KeyValues("kv");
 		h_KvItems.Rewind();
-		KvCopySubkeys(h_KvItems, kv);
+		kv.Import(h_KvItems);
 		
 		if (kv.GotoFirstSubKey())
 		{
@@ -2530,7 +2530,7 @@ void KvCopySubkeysEx(KeyValues input, KeyValues output)
 {
 	KeyValues temp = new KeyValues("Temp");
 
-	KvCopySubkeys(input, temp);
+	temp.Import(input);
 	CopyKeyValuesKeys(temp, output);
 	CopyKeyValuesSection(temp, output);
 
