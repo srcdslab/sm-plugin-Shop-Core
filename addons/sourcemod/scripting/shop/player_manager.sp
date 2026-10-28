@@ -393,8 +393,8 @@ void PlayerManager_TransferItem(int client, int target, int item_id)
 		
 		Transaction txn = new Transaction();
 		DataPack dp = new DataPack();
-		dp.WriteCell(client);
-		dp.WriteCell(target);
+		dp.WriteCell(GetClientUserId(client));
+		dp.WriteCell(GetClientUserId(target));
 		dp.WriteCell(item_id);
 		dp.WriteCell(h_KvClientItems[target].GetNum("duration"));
 		dp.WriteCell(timeleft);
@@ -412,16 +412,20 @@ void PlayerManager_TransferItem(int client, int target, int item_id)
 public void TxnOnTransferSuccess(Database db, any data, int numQueries, DBResultSet[] results, any[] queryData)
 {
 	DataPack dp = view_as<DataPack>(data);
-	int target;
+	int target, category_id;
 	if (dp != null)
 	{
 		dp.Reset();
 		dp.ReadCell(); // client
-		target = dp.ReadCell();
+		target = GetClientOfUserId(dp.ReadCell());
+		for (int i = 0; i < 7; i++)
+			dp.ReadCell(); // item_id, duration, timeleft, type, price, sell_price, buy_time
+		category_id = dp.ReadCell();
 		
 		delete dp;
 	}
-	int category_id = h_KvClientItems[target].GetNum("category_id");
+	if (!target || h_KvClientItems[target] == null)
+		return;
 		
 	h_KvClientItems[target].Rewind();
 	
@@ -440,12 +444,12 @@ public void TxnOnTransferFailure(Database db, any data, int numQueries, const ch
 	if (dp != null)
 	{
 		dp.Reset();
-		client = dp.ReadCell();
-		target = dp.ReadCell();
+		client = GetClientOfUserId(dp.ReadCell());
+		target = GetClientOfUserId(dp.ReadCell());
 		item_id = dp.ReadCell();
 		duration = dp.ReadCell();
-		ItemType type = view_as<ItemType>(dp.ReadCell());
 		timeleft = dp.ReadCell();
+		ItemType type = view_as<ItemType>(dp.ReadCell());
 		price = dp.ReadCell();
 		sell_price = dp.ReadCell();
 		buy_time = dp.ReadCell();
@@ -455,17 +459,26 @@ public void TxnOnTransferFailure(Database db, any data, int numQueries, const ch
 		char sItemId[16];
 		IntToString(item_id, sItemId, sizeof(sItemId));
 		
+		if (target && i_Id[target])
+		{
+			if (type != Item_Finite && PlayerManager_IsItemToggled(target, item_id))
+				PlayerManager_ToggleItem(target, item_id, Shop_UseOff);
+			
+			PlayerManager_RemoveItem(target, item_id); // remove item on target
+		}
+		
+		if (!client || !i_Id[client])
+		{
+			LogToFileEx("addons/sourcemod/shop.log", "[Item transfer error] previous owner left, item %d could not be returned", item_id);
+			return;
+		}
+		
 		if (type == Item_Finite)
 		{
-			PlayerManager_RemoveItem(target, item_id); // remove item on target
 			PlayerManager_GiveItemEx(client, sItemId, category_id, price, sell_price, 1, 0, 0, type);
 		}
 		else
 		{
-			if (PlayerManager_IsItemToggled(target, item_id))
-				PlayerManager_ToggleItem(target, item_id, Shop_UseOff);
-			
-			PlayerManager_RemoveItem(target, item_id); // remove item on target
 			PlayerManager_GiveItemEx(client, sItemId, category_id, price, sell_price, 1, duration, timeleft, type);
 		}
 		
@@ -1130,11 +1143,19 @@ void PlayerManager_OnClientPutInServer(int client)
 	}
 	
 	char auth[22];
-	GetClientAuthId(client, AuthId_Steam2, auth, sizeof(auth), false);
+	if (!GetClientAuthId(client, AuthId_Steam2, auth, sizeof(auth), false))
+	{
+		// SteamID not available yet, try again a bit later
+		CreateTimer(5.0, PlayerManager_RetryLoadClient, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
+		return;
+	}
+	
+	if (h_db == null)
+		return;
 	
 	char s_Query[256];
 	if (db_type == DB_MySQL)
-		h_db.Format(s_Query, sizeof(s_Query), "SELECT `money`, `id` FROM `%splayers` WHERE `auth` REGEXP '^STEAM_[0-9]:%s$' LIMIT 1;", g_sDbPrefix, auth[8]);
+		h_db.Format(s_Query, sizeof(s_Query), "SELECT `money`, `id` FROM `%splayers` WHERE `auth` IN ('STEAM_0:%s', 'STEAM_1:%s') LIMIT 1;", g_sDbPrefix, auth[8], auth[8]);
 	else
 		h_db.Format(s_Query, sizeof(s_Query), "SELECT `money`, `id` FROM `%splayers` WHERE `auth` = '%s' LIMIT 1;", g_sDbPrefix, auth);
 	
@@ -1144,6 +1165,15 @@ void PlayerManager_OnClientPutInServer(int client)
 	dp.WriteCell(0);
 	
 	TQuery(PlayerManager_AuthorizeClient, s_Query, dp);
+}
+
+public Action PlayerManager_RetryLoadClient(Handle timer, int userid)
+{
+	int client = GetClientOfUserId(userid);
+	if (client && IsClientInGame(client) && IsStarted() && !i_Id[client])
+		PlayerManager_OnClientPutInServer(client);
+	
+	return Plugin_Stop;
 }
 
 public void PlayerManager_AuthorizeClient(Database owner, DBResultSet hndl, const char[] error, DataPack dp)
@@ -1466,13 +1496,17 @@ void PlayerManager_OnClientDisconnect_Post(int client)
 
 void PlayerManager_SaveInfo(int client, bool cleartimer = false)
 {
-	if (!i_Id[client]) return;
+	if (!i_Id[client] || h_db == null) return;
 	
 	char s_Query[256];
 	int timeleft;
 	char sItemId[16];
+	
+	// Send the money and every item update in a single round-trip
+	Transaction txn = new Transaction();
+	
 	h_db.Format(s_Query, sizeof(s_Query), "UPDATE `%splayers` SET `money` = '%d' WHERE `id` = '%d';", g_sDbPrefix, iCredits[client], i_Id[client]);
-	TQueryEx(s_Query);
+	txn.AddQuery(s_Query);
 	
 	h_KvClientItems[client].Rewind();
 	if (h_KvClientItems[client].GotoFirstSubKey())
@@ -1504,12 +1538,19 @@ void PlayerManager_SaveInfo(int client, bool cleartimer = false)
 			}
 			
 			h_db.Format(s_Query, sizeof(s_Query), "UPDATE `%sboughts` SET `count` = '%d', `duration` = '%d', `timeleft` = '%d', `buy_price` = '%d', `sell_price` = '%d' WHERE `player_id` = '%d' AND `item_id` = '%s';", g_sDbPrefix, h_KvClientItems[client].GetNum("count", 1), duration, timeleft, h_KvClientItems[client].GetNum("price"), h_KvClientItems[client].GetNum("sell_price"), i_Id[client], sItemId);
-			TQueryEx(s_Query);
+			txn.AddQuery(s_Query);
 		}
 		while (h_KvClientItems[client].GotoNextKey());
 		
 		h_KvClientItems[client].Rewind();
 	}
+	
+	h_db.Execute(txn, _, PlayerManager_OnSaveInfoFailure, i_Id[client]);
+}
+
+public void PlayerManager_OnSaveInfoFailure(Database db, any data, int numQueries, const char[] error, int failIndex, any[] queryData)
+{
+	LogError("PlayerManager_SaveInfo (player id %d): query %d/%d failed: %s", data, failIndex + 1, numQueries, error);
 }
 
 void PlayerManager_OnItemRegistered(int item_id)
