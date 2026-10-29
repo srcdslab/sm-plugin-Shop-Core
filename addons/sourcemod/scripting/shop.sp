@@ -6,7 +6,7 @@
 #tryinclude <SteamWorks>
 #define REQUIRE_EXTENSIONS
 
-#define SHOP_VERSION "3.1E13"
+#define SHOP_VERSION "3.1E14"
 #define SHOP_MYSQL_CHARSET "utf8mb4"
 
 #pragma newdecls required
@@ -81,7 +81,6 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 	
 	RegPluginLibrary("shop");
 	MarkNativeAsOptional("GetUserMessageType");
-	MarkNativeAsOptional("SQL_SetCharset");
 
 	MarkNativeAsOptional("GuessSDKVersion"); 
 	MarkNativeAsOptional("GetEngineVersion");

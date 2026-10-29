@@ -6,7 +6,7 @@ enum struct backup_struct {
 	SQLQueryCallback CallBack;
 	any Data;
 	DBPriority Prio;
-	char QueryBuffer[512]; 
+	char QueryBuffer[2048]; 
 }
 ArrayList ar_backups;
 
@@ -262,12 +262,11 @@ public void DB_Connect(Database db, const char[] error, any data)
 	char s_Query[256];
 	if (db_type == DB_MySQL)
 	{
-		DB_TQueryEx("SET NAMES '" ... SHOP_MYSQL_CHARSET ... "'");
-		DB_TQueryEx("SET CHARSET '" ... SHOP_MYSQL_CHARSET ... "'");
-
-		if (GetFeatureStatus(FeatureType_Native, "SQL_SetCharset") == FeatureStatus_Available)
+		// Set the charset once per connection, before any query is queued:
+		// the driver keeps it in the connection options so it survives auto-reconnects.
+		if (!h_db.SetCharset(SHOP_MYSQL_CHARSET))
 		{
-			h_db.SetCharset(SHOP_MYSQL_CHARSET);
+			DB_TQueryEx("SET NAMES '" ... SHOP_MYSQL_CHARSET ... "'");
 		}
 
 		DB_TQuery(DB_GlobalTimer, "SELECT UNIX_TIMESTAMP()", _, DBPrio_High);
@@ -293,12 +292,19 @@ public void DB_GlobalTimer(Database db, DBResultSet results, const char[] error,
 	
 	if (results == null || !results.HasResults)
 	{
-		DB_TQuery(DB_GlobalTimer, "SELECT UNIX_TIMESTAMP()");
+		CreateTimer(5.0, DB_GlobalTimerRetry);
 		return;
 	}
 	
 	results.FetchRow();
 	global_timer = results.FetchInt(0);
+}
+
+public Action DB_GlobalTimerRetry(Handle timer)
+{
+	DB_TQuery(DB_GlobalTimer, "SELECT UNIX_TIMESTAMP()", _, DBPrio_High);
+
+	return Plugin_Stop;
 }
 
 public void DB_CheckTable(Database db, DBResultSet results, const char[] error, any data)
@@ -330,8 +336,6 @@ public void DB_CheckTable(Database db, DBResultSet results, const char[] error, 
 		
 		return;
 	}
-	
-	DB_RunBackup();
 	
 //	OnReadyToStart();
 	DB_CreateTables();
@@ -367,8 +371,6 @@ public void DB_CheckTable2(Database db, DBResultSet results, const char[] error,
 				DB_TQueryEx(sQuery);
 			}
 		}
-
-		return;
 	}
 	else if (results.RowCount == 0)
 	{
@@ -381,7 +383,7 @@ public void DB_CheckTable2(Database db, DBResultSet results, const char[] error,
 
 void DB_CreateTables()
 {
-	char s_Query[512];
+	char s_Query[1024];
 	if (db_type == DB_MySQL)
 	{
 		h_db.Format(s_Query, sizeof(s_Query), "CREATE TABLE IF NOT EXISTS `%sboughts` (\
@@ -392,7 +394,8 @@ void DB_CreateTables()
 							  `timeleft` int NOT NULL,\
 							  `buy_price` int NOT NULL,\
 							  `sell_price` int NOT NULL,\
-							  `buy_time` int\
+							  `buy_time` int,\
+							  KEY `player_item` (`player_id`, `item_id`)\
 							) ENGINE=InnoDB DEFAULT CHARSET=" ... SHOP_MYSQL_CHARSET ... ";", g_sDbPrefix);
 		DB_TQuery(DB_OnPlayersTableLoad, s_Query, 1);
 		
@@ -411,7 +414,8 @@ void DB_CreateTables()
 							  `money` int NOT NULL,\
 							  `lastconnect` int,\
 							  PRIMARY KEY (`id`), \
-								UNIQUE KEY `auth` (`auth`) \
+								UNIQUE KEY `auth` (`auth`), \
+								KEY `money` (`money`) \
 							) ENGINE=MyISAM DEFAULT CHARSET=" ... SHOP_MYSQL_CHARSET ... " AUTO_INCREMENT=1;", g_sDbPrefix);
 		DB_TQuery(DB_OnPlayersTableLoad, s_Query, 3);
 		
@@ -420,9 +424,20 @@ void DB_CreateTables()
 							  `player_id` int NOT NULL,\
 							  `item_id` int NOT NULL,\
 							  `state` tinyint NOT NULL DEFAULT 0,\
-							  PRIMARY KEY (`id`) \
+							  PRIMARY KEY (`id`), \
+							  KEY `player_item` (`player_id`, `item_id`) \
 							) ENGINE=MyISAM DEFAULT CHARSET=" ... SHOP_MYSQL_CHARSET ... " AUTO_INCREMENT=1;", g_sDbPrefix);
 		DB_TQuery(DB_OnPlayersTableLoad, s_Query, 4);
+
+		// Existing installs: add the indexes missing from older schemas (error 1061 = already there)
+		h_db.Format(s_Query, sizeof(s_Query), "ALTER TABLE `%sboughts` ADD INDEX `player_item` (`player_id`, `item_id`);", g_sDbPrefix);
+		DB_TQuery(DB_OnIndexAdded, s_Query);
+
+		h_db.Format(s_Query, sizeof(s_Query), "ALTER TABLE `%stoggles` ADD INDEX `player_item` (`player_id`, `item_id`);", g_sDbPrefix);
+		DB_TQuery(DB_OnIndexAdded, s_Query);
+
+		h_db.Format(s_Query, sizeof(s_Query), "ALTER TABLE `%splayers` ADD INDEX `money` (`money`);", g_sDbPrefix);
+		DB_TQuery(DB_OnIndexAdded, s_Query);
 	}
 	else
 	{
@@ -457,9 +472,30 @@ void DB_CreateTables()
 							  `item_id` INTEGER NOT NULL,\
 							  `state` INTEGER NOT NULL DEFAULT 0);", g_sDbPrefix);
 		DB_TQuery(DB_OnPlayersTableLoad, s_Query, 4);
+
+		h_db.Format(s_Query, sizeof(s_Query), "CREATE INDEX IF NOT EXISTS `%sboughts_player_item` ON `%sboughts` (`player_id`, `item_id`);", g_sDbPrefix, g_sDbPrefix);
+		DB_TQuery(DB_OnIndexAdded, s_Query);
+
+		h_db.Format(s_Query, sizeof(s_Query), "CREATE INDEX IF NOT EXISTS `%stoggles_player_item` ON `%stoggles` (`player_id`, `item_id`);", g_sDbPrefix, g_sDbPrefix);
+		DB_TQuery(DB_OnIndexAdded, s_Query);
+
+		h_db.Format(s_Query, sizeof(s_Query), "CREATE INDEX IF NOT EXISTS `%splayers_money` ON `%splayers` (`money`);", g_sDbPrefix, g_sDbPrefix);
+		DB_TQuery(DB_OnIndexAdded, s_Query);
 	}
 	
+	// Replay the queries queued while the database was not connected
+	DB_RunBackup();
+	
 	isLoading = false;
+}
+
+public void DB_OnIndexAdded(Database db, DBResultSet results, const char[] error, any data)
+{
+	// 1061: Duplicate key name, the index already exists
+	if (error[0] && StrContains(error, "Duplicate key name", false) == -1)
+	{
+		LogError("DB_OnIndexAdded: %s", error);
+	}
 }
 
 public void DB_OnPlayersTableLoad(Database db, DBResultSet results, const char[] error, any data)
@@ -475,12 +511,6 @@ public void DB_OnPlayersTableLoad(Database db, DBResultSet results, const char[]
 	if (data != 4)
 	{
 		return;
-	}
-	
-	if (db_type == DB_MySQL)
-	{
-		DB_TQueryEx("SET NAMES '" ... SHOP_MYSQL_CHARSET ... "'");
-		DB_TQueryEx("SET CHARSET '" ... SHOP_MYSQL_CHARSET ... "'");
 	}
 	
 	if (upgrade_dp != null)
@@ -509,7 +539,7 @@ void WriteBackUp(SQLQueryCallback callback, const char[] query, any data = 0, DB
 	backup_struct backup;
 
 	backup.CallBack = callback;
-	FormatEx(backup.QueryBuffer, sizeof(backup.QueryBuffer), query);
+	strcopy(backup.QueryBuffer, sizeof(backup.QueryBuffer), query);
 	backup.Data = data;
 	backup.Prio = prio;
 

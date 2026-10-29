@@ -647,7 +647,7 @@ public int ItemManager_UnregisterItem(Handle plugin, int numParams)
 	return 0;
 }
 
-public int ItemManager_OnItemRegistered(Handle owner, DBResultSet hndl, const char[] error, DataPack dp)
+public void ItemManager_OnItemRegistered(Database owner, DBResultSet hndl, const char[] error, DataPack dp)
 {
 	char category[SHOP_MAX_STRING_LENGTH], item[SHOP_MAX_STRING_LENGTH];
 	
@@ -668,7 +668,7 @@ public int ItemManager_OnItemRegistered(Handle owner, DBResultSet hndl, const ch
 			delete kv;
 			delete dp;
 			
-			return 0;
+			return;
 		}
 	}
 	
@@ -678,8 +678,9 @@ public int ItemManager_OnItemRegistered(Handle owner, DBResultSet hndl, const ch
 	}
 	if (hndl == null)
 	{
+		delete kv;
 		delete dp;
-		return 0;
+		return;
 	}
 	
 	int id;
@@ -704,14 +705,14 @@ public int ItemManager_OnItemRegistered(Handle owner, DBResultSet hndl, const ch
 				
 				TQuery(ItemManager_OnItemRegistered, s_Query, dp);
 				
-				return 0;
+				return;
 			}
 			
 			id = hndl.FetchInt(0);
 		}
 		case 1:
 		{
-			id = SQL_GetInsertId(hndl);
+			id = hndl.InsertId;
 		}
 	}
 	
@@ -760,7 +761,6 @@ public int ItemManager_OnItemRegistered(Handle owner, DBResultSet hndl, const ch
 	}
 
 	Forward_OnItemRegistered(category_id, category, id, item);
-	return 0;
 }
 
 public int ItemManager_GetItemCustomInfo(Handle plugin, int numParams)
