@@ -29,8 +29,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p addons/sourcemod/scripting/include deps
-          git clone --depth=1 https://github.com/srcdslab/sm-ext-SteamWorks.git deps/steamworks
-          cp -R deps/steamworks/Pawn/include/* addons/sourcemod/scripting/include/
+          git clone --depth=1 https://github.com/alliedmodders/SM-SteamWorks.git deps/steamworks
+          cp -R deps/steamworks/Pawn/includes/* addons/sourcemod/scripting/include/
 
       - name: Build sourcemod plugin
         working-directory: addons/sourcemod/scripting

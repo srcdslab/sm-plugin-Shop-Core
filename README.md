@@ -9,7 +9,7 @@ For SQLite usage, **shop supports MySQL and recommended to use**
         "database"  "shop_core"
 }
 ```
-- (Optional) [Steamworks](https://forums.alliedmods.net/showthread.php?t=229556)
+- (Optional) [SteamWorks](https://github.com/alliedmodders/SM-SteamWorks)
 
 ## Installation
 - Extract archive from [Releases](../../releases) page to server directory
