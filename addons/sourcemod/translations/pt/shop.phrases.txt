@@ -1,0 +1,497 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"pt"		"{green}[Shop]{default} Você não tem acesso a este comando!"
+	}
+
+	"TargetNotFound"
+	{
+		"pt"		"{green}[Shop]{default} Alvo {green}{1}{default} não encontrado!"
+	}
+
+	"select_target"
+	{
+		"pt"		"Selecione o jogador:"
+	}
+
+	"select_category"
+	{
+		"pt"		"Selecione a categoria:"
+	}
+
+	"select_item"
+	{
+		"pt"		"Selecione o item:"
+	}
+
+	"no_targets"
+	{
+		"pt"		"{green}[Shop]{default} Nenhum alvo válido!"
+	}
+
+	"target_left_game"
+	{
+		"pt"		"{green}[Shop]{default} O jogador saiu do jogo!"
+	}
+
+	"trans_credits_operation"
+	{
+		"pt"		"Digite no chat a quantidade de créditos a transferir\nou \"cancel\" para cancelar a operação!"
+	}
+
+	"TransferSuccess"
+	{
+		"pt"		"{green}[Shop]{default} Você enviou {green}{1}{default} créditos para {green}{2}{default} com sucesso!"
+	}
+
+	"ReceiveSuccess"
+	{
+		"pt"		"{green}[Shop]{default} Você recebeu {green}{1}{default} créditos de {green}{2}{default}!"
+	}
+
+	"ReceiveCommission"
+	{
+		"pt"		"{green}[Shop]{default} Comissão retida: {green}{1} {default}créditos"
+	}
+
+	"receive_item"
+	{
+		"pt"		"{green}[Shop]{default} Você recebeu {green}\"{3}\"{default} na categoria {green}\"{2}\"{default} de {green}{1}{default}!"
+	}
+
+	"already_has"
+	{
+		"pt"		"{green}[Shop]{default} O jogador {green}{1}{default} já possui este item!"
+	}
+
+	"no_item"
+	{
+		"pt"		"{green}[Shop]{default} Este item não está no seu inventário!"
+	}
+
+	"IncorrectCredits"
+	{
+		"pt"		"Quantidade de créditos inválida!"
+	}
+
+	"credits_being_transfered"
+	{
+		"pt"		"Quantidade de créditos: {1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"pt"		"Será enviado: {1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"pt"		"Custo da transferência: {1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"pt"		"Comissão: {1} créditos"
+	}
+
+	"transfer_credits_left"
+	{
+		"pt"		"Restante: {1}"
+	}
+
+	"need_positive"
+	{
+		"pt"		"Faltam {1} créditos"
+	}
+
+	"confirm"
+	{
+		"pt"		"Confirmar"
+	}
+
+	"cancel"
+	{
+		"pt"		"Cancelar"
+	}
+
+	"transfer"
+	{
+		"pt"		"Transferir"
+	}
+
+	"ItemTransferMenu"
+	{
+		"pt"		"Transferir item"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"pt"		"Transferir item\npara {1}"
+	}
+
+	"give_credits"
+	{
+		"pt"		"Dar créditos"
+	}
+
+	"take_credits"
+	{
+		"pt"		"Remover créditos"
+	}
+
+	"set_credits"
+	{
+		"pt"		"Definir créditos"
+	}
+
+	"give_items"
+	{
+		"pt"		"Dar itens"
+	}
+
+	"take_items"
+	{
+		"pt"		"Remover itens"
+	}
+
+	"give_item_success"
+	{
+		"pt"		"{green}[Shop]{default} Você deu o item com sucesso!"
+	}
+
+	"take_item_success"
+	{
+		"pt"		"{green}[Shop]{default} Você removeu o item com sucesso!"
+	}
+
+	"give_credits_success"
+	{
+		"pt"		"{green}[Shop]{default} Você deu {1} créditos para {green}{2}{default}!"
+	}
+
+	"remove_credits_success"
+	{
+		"pt"		"{green}[Shop]{default} Você removeu {1} créditos de {green}{2}{default}!"
+	}
+
+	"set_credits_success"
+	{
+		"pt"		"{green}[Shop]{default} Você definiu os créditos de {green}{2}{default} para {1}!"
+	}
+
+	"set_you_credits"
+	{
+		"pt"		"{green}[Shop]{default} Um admin definiu seus créditos para {green}{1}{default}!"
+	}
+
+	"take_you_credits"
+	{
+		"pt"		"{green}[Shop]{default} Um admin removeu {green}{1}{default} dos seus créditos!"
+	}
+
+	"give_you_credits"
+	{
+		"pt"		"{green}[Shop]{default} Um admin deu {green}{1}{default} créditos para você!"
+	}
+
+	"EmptyInventory"
+	{
+		"pt"		"{green}[Shop]{default} Seu inventário está vazio!"
+	}
+
+	"EmptyShop"
+	{
+		"pt"		"{green}[Shop]{default} A loja está vazia!"
+	}
+
+	"EmptyCategory"
+	{
+		"pt"		"{green}[Shop]{default} A categoria está vazia!"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"pt"		"A categoria está vazia!"
+	}
+
+	"NothingToLuck"
+	{
+		"pt"		"{green}[Shop]{default} Não há nada que você possa ganhar!"
+	}
+
+	"Looser"
+	{
+		"pt"		"{green}[Shop]{default} Que azar! Você não ganhou nada :("
+	}
+
+	"Lucker"
+	{
+		"pt"		"{green}[Shop]{default} Hoje é seu dia de sorte :). Você ganhou {green}\"{2}\"{default} na categoria {green}\"{1}\"{default}."
+	}
+
+	"ItemElapsed"
+	{
+		"pt"		"{green}[Shop]{default} O item {green}\"{2}\"{default} da categoria {green}\"{1}\"{default} expirou!"
+	}
+
+	"trans_credits"
+	{
+		"pt"		"Transferir créditos"
+	}
+
+	"trans_credits_commision"
+	{
+		"pt"		"[Comissão: {1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"pt"		"[Preço: {1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"pt"		"[Desativado]"
+	}
+
+	"luck_disabled"
+	{
+		"pt"		"[Desativado]"
+	}
+
+	"try_luck"
+	{
+		"pt"		"Tentar a sorte"
+	}
+
+	"luck_credits_chance"
+	{
+		"pt"		"[Chance: {2}%%|Preço: {1}]"
+	}
+
+	"Type"
+	{
+		"pt"		"Tipo"
+	}
+
+	"None"
+	{
+		"pt"		"Nenhum"
+	}
+
+	"Finite"
+	{
+		"pt"		"Finito"
+	}
+
+	"Togglable"
+	{
+		"pt"		"Alternável"
+	}
+
+	"BuyOnly"
+	{
+		"pt"		"Somente compra"
+	}
+
+	"Price"
+	{
+		"pt"		"Preço"
+	}
+
+	"Sell Price"
+	{
+		"pt"		"Preço de venda"
+	}
+
+	"absolute_sellprice"
+	{
+		"pt"		"Valor de revenda"
+	}
+
+	"Free"
+	{
+		"pt"		"Grátis"
+	}
+
+	"Unsaleable"
+	{
+		"pt"		"Invendável"
+	}
+
+	"Count"
+	{
+		"pt"		"Quantidade"
+	}
+
+	"duration"
+	{
+		"pt"		"Duração"
+	}
+
+	"forever"
+	{
+		"pt"		"Permanente"
+	}
+
+	"timeleft"
+	{
+		"pt"		"Tempo restante"
+	}
+
+	"You have"
+	{
+		"pt"		"Você tem"
+	}
+
+	"MainMenuTitle"
+	{
+		"pt"		"Loja"
+	}
+
+	"Shop"
+	{
+		"pt"		"Loja"
+	}
+
+	"credits"
+	{
+		"pt"		"Créditos: {1}"
+	}
+
+	"buy"
+	{
+		"pt"		"Comprar"
+	}
+
+	"buy_not"
+	{
+		"pt"		"Comprar [Créditos insuficientes]"
+	}
+
+	"sell"
+	{
+		"pt"		"Vender"
+	}
+
+	"inventory"
+	{
+		"pt"		"Inventário"
+	}
+
+	"use"
+	{
+		"pt"		"Usar"
+	}
+
+	"ToggleOn"
+	{
+		"pt"		"Ativar"
+	}
+
+	"ToggleOff"
+	{
+		"pt"		"Desativar"
+	}
+
+	"preview"
+	{
+		"pt"		"Pré-visualizar"
+	}
+
+	"preview_unavailable"
+	{
+		"pt"		"Pré-visualização indisponível"
+	}
+
+	"functions"
+	{
+		"pt"		"Funções"
+	}
+
+	"info"
+	{
+		"pt"		"Info"
+	}
+
+	"admin_panel"
+	{
+		"pt"		"Painel de admin"
+	}
+
+	"Back"
+	{
+		"pt"		"Voltar"
+	}
+
+	"Exit"
+	{
+		"pt"		"Sair"
+	}
+	
+	"NotEnoughCredits"
+	{
+		"pt"		"{green}[Shop] {default}Créditos insuficientes!"
+	}
+
+	"PreviewIn"
+	{
+		"pt"		"{green}[Shop] {default}A pré-visualização estará disponível em {1} seg.!"
+	}
+
+	"DataLoaded"
+	{
+		"pt"		"{green}[Shop] {default}Seus dados da loja foram carregados! Digite {green}!{1}{default} para abrir a loja!"
+	}
+
+	"DataLoaded2"
+	{
+		"pt"		"{green}[Shop] {default}Seus dados da loja foram carregados!"
+	}
+
+	"DataLoading"
+	{
+		"pt"		"{green}[Shop] {default}Seus dados estão sendo carregados!"
+	}
+
+	"You Buy Sure"
+	{
+		"pt"		"Tem certeza de que deseja comprar este item?"
+	}
+
+	"You Sell Sure"
+	{
+		"pt"		"Tem certeza de que deseja vender este item?"
+	}
+
+	"confirm_luck"
+	{
+		"pt"		"Tem certeza de que deseja gastar {1} créditos para tentar a sorte?"
+	}
+
+	"y."
+	{
+		"pt"		"a."
+	}
+
+	"d."
+	{
+		"pt"		"d."
+	}
+
+	"h."
+	{
+		"pt"		"h."
+	}
+
+	"m."
+	{
+		"pt"		"min."
+	}
+
+	"s."
+	{
+		"pt"		"seg."
+	}
+}

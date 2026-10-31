@@ -169,7 +169,7 @@ public int Admin_MenuCount_Handler(Menu menu, MenuAction action, int param1, int
 			
 			if (!target)
 			{
-				CPrintToChat(param1, "target_left_game");
+				CPrintToChat(param1, "%t", "target_left_game");
 				Admin_ShowMenu(param1);
 				return 0;
 			}
@@ -330,7 +330,7 @@ public int Admin_Menu_Handler(Menu menu, MenuAction action, int param1, int para
 			
 			if (!Admin_ShowTargetsMenu(param1))
 			{
-				CPrintToChat(param1, "no_targets");
+				CPrintToChat(param1, "%t", "no_targets");
 				Admin_ShowMenu(param1, GetMenuSelectionPosition());
 			}
 		}
@@ -384,7 +384,7 @@ public int Admin_TargetsMenu_Handler(Menu menu, MenuAction action, int param1, i
 			
 			if (!target)
 			{
-				CPrintToChat(param1, "target_left_game");
+				CPrintToChat(param1, "%t", "target_left_game");
 				Admin_ShowTargetsMenu(param1, GetMenuSelectionPosition());
 				return 0;
 			}
