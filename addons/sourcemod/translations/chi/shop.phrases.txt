@@ -1,0 +1,497 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"chi"		"{green}[Shop]{default} 你没有权限使用此命令！"
+	}
+
+	"TargetNotFound"
+	{
+		"chi"		"{green}[Shop]{default} 未找到目标 {green}{1}{default}！"
+	}
+
+	"select_target"
+	{
+		"chi"		"选择玩家："
+	}
+
+	"select_category"
+	{
+		"chi"		"选择分类："
+	}
+
+	"select_item"
+	{
+		"chi"		"选择物品："
+	}
+
+	"no_targets"
+	{
+		"chi"		"{green}[Shop]{default} 没有合适的目标！"
+	}
+
+	"target_left_game"
+	{
+		"chi"		"{green}[Shop]{default} 该玩家已离开游戏！"
+	}
+
+	"trans_credits_operation"
+	{
+		"chi"		"请在聊天框输入要转账的积分数量\n或输入 \"cancel\" 取消操作！"
+	}
+
+	"TransferSuccess"
+	{
+		"chi"		"{green}[Shop]{default} 你已成功向 {green}{2}{default} 发送 {green}{1}{default} 积分！"
+	}
+
+	"ReceiveSuccess"
+	{
+		"chi"		"{green}[Shop]{default} 你收到了来自 {green}{2}{default} 的 {green}{1}{default} 积分！"
+	}
+
+	"ReceiveCommission"
+	{
+		"chi"		"{green}[Shop]{default} 已扣除手续费：{green}{1} {default}积分"
+	}
+
+	"receive_item"
+	{
+		"chi"		"{green}[Shop]{default} 你从 {green}{1}{default} 处收到了分类 {green}\"{2}\"{default} 中的 {green}\"{3}\"{default}！"
+	}
+
+	"already_has"
+	{
+		"chi"		"{green}[Shop]{default} 玩家 {green}{1}{default} 已拥有该物品！"
+	}
+
+	"no_item"
+	{
+		"chi"		"{green}[Shop]{default} 你的库存中没有该物品！"
+	}
+
+	"IncorrectCredits"
+	{
+		"chi"		"积分数量无效！"
+	}
+
+	"credits_being_transfered"
+	{
+		"chi"		"积分数量：{1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"chi"		"将发送：{1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"chi"		"转账费用：{1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"chi"		"手续费：{1} 积分"
+	}
+
+	"transfer_credits_left"
+	{
+		"chi"		"剩余：{1}"
+	}
+
+	"need_positive"
+	{
+		"chi"		"还差 {1} 积分"
+	}
+
+	"confirm"
+	{
+		"chi"		"确认"
+	}
+
+	"cancel"
+	{
+		"chi"		"取消"
+	}
+
+	"transfer"
+	{
+		"chi"		"转让"
+	}
+
+	"ItemTransferMenu"
+	{
+		"chi"		"转让物品"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"chi"		"将物品转让\n给 {1}"
+	}
+
+	"give_credits"
+	{
+		"chi"		"给予积分"
+	}
+
+	"take_credits"
+	{
+		"chi"		"扣除积分"
+	}
+
+	"set_credits"
+	{
+		"chi"		"设置积分"
+	}
+
+	"give_items"
+	{
+		"chi"		"给予物品"
+	}
+
+	"take_items"
+	{
+		"chi"		"移除物品"
+	}
+
+	"give_item_success"
+	{
+		"chi"		"{green}[Shop]{default} 你已成功给予该物品！"
+	}
+
+	"take_item_success"
+	{
+		"chi"		"{green}[Shop]{default} 你已成功移除该物品！"
+	}
+
+	"give_credits_success"
+	{
+		"chi"		"{green}[Shop]{default} 你已给予 {green}{2}{default} {1} 积分！"
+	}
+
+	"remove_credits_success"
+	{
+		"chi"		"{green}[Shop]{default} 你已从 {green}{2}{default} 扣除 {1} 积分！"
+	}
+
+	"set_credits_success"
+	{
+		"chi"		"{green}[Shop]{default} 你已将 {green}{2}{default} 的积分设置为 {1}！"
+	}
+
+	"set_you_credits"
+	{
+		"chi"		"{green}[Shop]{default} 管理员已将你的积分设置为 {green}{1}{default}！"
+	}
+
+	"take_you_credits"
+	{
+		"chi"		"{green}[Shop]{default} 管理员扣除了你 {green}{1}{default} 积分！"
+	}
+
+	"give_you_credits"
+	{
+		"chi"		"{green}[Shop]{default} 管理员给予了你 {green}{1}{default} 积分！"
+	}
+
+	"EmptyInventory"
+	{
+		"chi"		"{green}[Shop]{default} 你的库存是空的！"
+	}
+
+	"EmptyShop"
+	{
+		"chi"		"{green}[Shop]{default} 商店是空的！"
+	}
+
+	"EmptyCategory"
+	{
+		"chi"		"{green}[Shop]{default} 该分类是空的！"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"chi"		"该分类是空的！"
+	}
+
+	"NothingToLuck"
+	{
+		"chi"		"{green}[Shop]{default} 没有可以赢取的物品！"
+	}
+
+	"Looser"
+	{
+		"chi"		"{green}[Shop]{default} 运气不佳！你什么也没得到 :("
+	}
+
+	"Lucker"
+	{
+		"chi"		"{green}[Shop]{default} 今天是你的幸运日 :)。你获得了分类 {green}\"{1}\"{default} 中的 {green}\"{2}\"{default}。"
+	}
+
+	"ItemElapsed"
+	{
+		"chi"		"{green}[Shop]{default} 分类 {green}\"{1}\"{default} 中的物品 {green}\"{2}\"{default} 已过期！"
+	}
+
+	"trans_credits"
+	{
+		"chi"		"转账积分"
+	}
+
+	"trans_credits_commision"
+	{
+		"chi"		"[手续费：{1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"chi"		"[价格：{1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"chi"		"[已禁用]"
+	}
+
+	"luck_disabled"
+	{
+		"chi"		"[已禁用]"
+	}
+
+	"try_luck"
+	{
+		"chi"		"试试运气"
+	}
+
+	"luck_credits_chance"
+	{
+		"chi"		"[几率：{2}%%|价格：{1}]"
+	}
+
+	"Type"
+	{
+		"chi"		"类型"
+	}
+
+	"None"
+	{
+		"chi"		"无"
+	}
+
+	"Finite"
+	{
+		"chi"		"有限"
+	}
+
+	"Togglable"
+	{
+		"chi"		"可切换"
+	}
+
+	"BuyOnly"
+	{
+		"chi"		"仅购买"
+	}
+
+	"Price"
+	{
+		"chi"		"价格"
+	}
+
+	"Sell Price"
+	{
+		"chi"		"出售价格"
+	}
+
+	"absolute_sellprice"
+	{
+		"chi"		"当前回收价"
+	}
+
+	"Free"
+	{
+		"chi"		"免费"
+	}
+
+	"Unsaleable"
+	{
+		"chi"		"不可出售"
+	}
+
+	"Count"
+	{
+		"chi"		"数量"
+	}
+
+	"duration"
+	{
+		"chi"		"时长"
+	}
+
+	"forever"
+	{
+		"chi"		"永久"
+	}
+
+	"timeleft"
+	{
+		"chi"		"剩余时间"
+	}
+
+	"You have"
+	{
+		"chi"		"你拥有"
+	}
+
+	"MainMenuTitle"
+	{
+		"chi"		"商店"
+	}
+
+	"Shop"
+	{
+		"chi"		"商店"
+	}
+
+	"credits"
+	{
+		"chi"		"积分：{1}"
+	}
+
+	"buy"
+	{
+		"chi"		"购买"
+	}
+
+	"buy_not"
+	{
+		"chi"		"购买 [积分不足]"
+	}
+
+	"sell"
+	{
+		"chi"		"出售"
+	}
+
+	"inventory"
+	{
+		"chi"		"库存"
+	}
+
+	"use"
+	{
+		"chi"		"使用"
+	}
+
+	"ToggleOn"
+	{
+		"chi"		"启用"
+	}
+
+	"ToggleOff"
+	{
+		"chi"		"禁用"
+	}
+
+	"preview"
+	{
+		"chi"		"预览"
+	}
+
+	"preview_unavailable"
+	{
+		"chi"		"预览不可用"
+	}
+
+	"functions"
+	{
+		"chi"		"功能"
+	}
+
+	"info"
+	{
+		"chi"		"信息"
+	}
+
+	"admin_panel"
+	{
+		"chi"		"管理面板"
+	}
+
+	"Back"
+	{
+		"chi"		"返回"
+	}
+
+	"Exit"
+	{
+		"chi"		"退出"
+	}
+	
+	"NotEnoughCredits"
+	{
+		"chi"		"{green}[Shop] {default}积分不足！"
+	}
+
+	"PreviewIn"
+	{
+		"chi"		"{green}[Shop] {default}预览将在 {1} 秒后可用！"
+	}
+
+	"DataLoaded"
+	{
+		"chi"		"{green}[Shop] {default}你的商店数据已加载！输入 {green}!{1}{default} 打开商店！"
+	}
+
+	"DataLoaded2"
+	{
+		"chi"		"{green}[Shop] {default}你的商店数据已加载！"
+	}
+
+	"DataLoading"
+	{
+		"chi"		"{green}[Shop] {default}正在加载你的数据！"
+	}
+
+	"You Buy Sure"
+	{
+		"chi"		"确定要购买此物品吗？"
+	}
+
+	"You Sell Sure"
+	{
+		"chi"		"确定要出售此物品吗？"
+	}
+
+	"confirm_luck"
+	{
+		"chi"		"确定要花费 {1} 积分试试运气吗？"
+	}
+
+	"y."
+	{
+		"chi"		"年"
+	}
+
+	"d."
+	{
+		"chi"		"天"
+	}
+
+	"h."
+	{
+		"chi"		"小时"
+	}
+
+	"m."
+	{
+		"chi"		"分钟"
+	}
+
+	"s."
+	{
+		"chi"		"秒"
+	}
+}

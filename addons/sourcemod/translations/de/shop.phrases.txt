@@ -1,0 +1,497 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"de"		"{green}[Shop]{default} Du hast keinen Zugriff auf diesen Befehl!"
+	}
+
+	"TargetNotFound"
+	{
+		"de"		"{green}[Shop]{default} Ziel {green}{1}{default} nicht gefunden!"
+	}
+
+	"select_target"
+	{
+		"de"		"Spieler auswählen:"
+	}
+
+	"select_category"
+	{
+		"de"		"Kategorie auswählen:"
+	}
+
+	"select_item"
+	{
+		"de"		"Item auswählen:"
+	}
+
+	"no_targets"
+	{
+		"de"		"{green}[Shop]{default} Keine passenden Ziele!"
+	}
+
+	"target_left_game"
+	{
+		"de"		"{green}[Shop]{default} Der Spieler hat das Spiel verlassen!"
+	}
+
+	"trans_credits_operation"
+	{
+		"de"		"Gib im Chat die Anzahl der zu überweisenden Credits ein\noder \"cancel\", um den Vorgang abzubrechen!"
+	}
+
+	"TransferSuccess"
+	{
+		"de"		"{green}[Shop]{default} Du hast {green}{1}{default} Credits erfolgreich an {green}{2}{default} gesendet!"
+	}
+
+	"ReceiveSuccess"
+	{
+		"de"		"{green}[Shop]{default} Du hast {green}{1}{default} Credits von {green}{2}{default} erhalten!"
+	}
+
+	"ReceiveCommission"
+	{
+		"de"		"{green}[Shop]{default} Einbehaltene Gebühr: {green}{1} {default}Credits"
+	}
+
+	"receive_item"
+	{
+		"de"		"{green}[Shop]{default} Du hast {green}\"{3}\"{default} in der Kategorie {green}\"{2}\"{default} von {green}{1}{default} erhalten!"
+	}
+
+	"already_has"
+	{
+		"de"		"{green}[Shop]{default} Der Spieler {green}{1}{default} besitzt dieses Item bereits!"
+	}
+
+	"no_item"
+	{
+		"de"		"{green}[Shop]{default} Dieses Item befindet sich nicht in deinem Inventar!"
+	}
+
+	"IncorrectCredits"
+	{
+		"de"		"Ungültige Anzahl an Credits!"
+	}
+
+	"credits_being_transfered"
+	{
+		"de"		"Anzahl der Credits: {1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"de"		"Wird gesendet: {1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"de"		"Überweisungskosten: {1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"de"		"Gebühr: {1} Credits"
+	}
+
+	"transfer_credits_left"
+	{
+		"de"		"Verbleibend: {1}"
+	}
+
+	"need_positive"
+	{
+		"de"		"Dir fehlen {1} Credits"
+	}
+
+	"confirm"
+	{
+		"de"		"Bestätigen"
+	}
+
+	"cancel"
+	{
+		"de"		"Abbrechen"
+	}
+
+	"transfer"
+	{
+		"de"		"Übertragen"
+	}
+
+	"ItemTransferMenu"
+	{
+		"de"		"Item übertragen"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"de"		"Item übertragen\nan {1}"
+	}
+
+	"give_credits"
+	{
+		"de"		"Credits geben"
+	}
+
+	"take_credits"
+	{
+		"de"		"Credits abziehen"
+	}
+
+	"set_credits"
+	{
+		"de"		"Credits festlegen"
+	}
+
+	"give_items"
+	{
+		"de"		"Items geben"
+	}
+
+	"take_items"
+	{
+		"de"		"Items entfernen"
+	}
+
+	"give_item_success"
+	{
+		"de"		"{green}[Shop]{default} Du hast das Item erfolgreich vergeben!"
+	}
+
+	"take_item_success"
+	{
+		"de"		"{green}[Shop]{default} Du hast das Item erfolgreich entfernt!"
+	}
+
+	"give_credits_success"
+	{
+		"de"		"{green}[Shop]{default} Du hast {1} Credits an {green}{2}{default} vergeben!"
+	}
+
+	"remove_credits_success"
+	{
+		"de"		"{green}[Shop]{default} Du hast {1} Credits von {green}{2}{default} abgezogen!"
+	}
+
+	"set_credits_success"
+	{
+		"de"		"{green}[Shop]{default} Du hast die Credits von {green}{2}{default} auf {1} gesetzt!"
+	}
+
+	"set_you_credits"
+	{
+		"de"		"{green}[Shop]{default} Ein Admin hat deine Credits auf {green}{1}{default} gesetzt!"
+	}
+
+	"take_you_credits"
+	{
+		"de"		"{green}[Shop]{default} Ein Admin hat dir {green}{1}{default} Credits abgezogen!"
+	}
+
+	"give_you_credits"
+	{
+		"de"		"{green}[Shop]{default} Ein Admin hat dir {green}{1}{default} Credits gegeben!"
+	}
+
+	"EmptyInventory"
+	{
+		"de"		"{green}[Shop]{default} Dein Inventar ist leer!"
+	}
+
+	"EmptyShop"
+	{
+		"de"		"{green}[Shop]{default} Der Shop ist leer!"
+	}
+
+	"EmptyCategory"
+	{
+		"de"		"{green}[Shop]{default} Die Kategorie ist leer!"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"de"		"Die Kategorie ist leer!"
+	}
+
+	"NothingToLuck"
+	{
+		"de"		"{green}[Shop]{default} Es gibt nichts, was du gewinnen kannst!"
+	}
+
+	"Looser"
+	{
+		"de"		"{green}[Shop]{default} Pech gehabt! Du hast nichts gewonnen :("
+	}
+
+	"Lucker"
+	{
+		"de"		"{green}[Shop]{default} Heute ist dein Glückstag :). Du hast {green}\"{2}\"{default} in der Kategorie {green}\"{1}\"{default} gewonnen."
+	}
+
+	"ItemElapsed"
+	{
+		"de"		"{green}[Shop]{default} Das Item {green}\"{2}\"{default} aus der Kategorie {green}\"{1}\"{default} ist abgelaufen!"
+	}
+
+	"trans_credits"
+	{
+		"de"		"Credits überweisen"
+	}
+
+	"trans_credits_commision"
+	{
+		"de"		"[Gebühr: {1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"de"		"[Preis: {1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"de"		"[Deaktiviert]"
+	}
+
+	"luck_disabled"
+	{
+		"de"		"[Deaktiviert]"
+	}
+
+	"try_luck"
+	{
+		"de"		"Versuch dein Glück"
+	}
+
+	"luck_credits_chance"
+	{
+		"de"		"[Chance: {2}%%|Preis: {1}]"
+	}
+
+	"Type"
+	{
+		"de"		"Typ"
+	}
+
+	"None"
+	{
+		"de"		"Keiner"
+	}
+
+	"Finite"
+	{
+		"de"		"Begrenzt"
+	}
+
+	"Togglable"
+	{
+		"de"		"Umschaltbar"
+	}
+
+	"BuyOnly"
+	{
+		"de"		"Nur kaufen"
+	}
+
+	"Price"
+	{
+		"de"		"Preis"
+	}
+
+	"Sell Price"
+	{
+		"de"		"Verkaufspreis"
+	}
+
+	"absolute_sellprice"
+	{
+		"de"		"Wiederverkaufswert"
+	}
+
+	"Free"
+	{
+		"de"		"Kostenlos"
+	}
+
+	"Unsaleable"
+	{
+		"de"		"Unverkäuflich"
+	}
+
+	"Count"
+	{
+		"de"		"Anzahl"
+	}
+
+	"duration"
+	{
+		"de"		"Dauer"
+	}
+
+	"forever"
+	{
+		"de"		"Permanent"
+	}
+
+	"timeleft"
+	{
+		"de"		"Verbleibende Zeit"
+	}
+
+	"You have"
+	{
+		"de"		"Du hast"
+	}
+
+	"MainMenuTitle"
+	{
+		"de"		"Shop"
+	}
+
+	"Shop"
+	{
+		"de"		"Shop"
+	}
+
+	"credits"
+	{
+		"de"		"Credits: {1}"
+	}
+
+	"buy"
+	{
+		"de"		"Kaufen"
+	}
+
+	"buy_not"
+	{
+		"de"		"Kaufen [Nicht genug Credits]"
+	}
+
+	"sell"
+	{
+		"de"		"Verkaufen"
+	}
+
+	"inventory"
+	{
+		"de"		"Inventar"
+	}
+
+	"use"
+	{
+		"de"		"Benutzen"
+	}
+
+	"ToggleOn"
+	{
+		"de"		"Aktivieren"
+	}
+
+	"ToggleOff"
+	{
+		"de"		"Deaktivieren"
+	}
+
+	"preview"
+	{
+		"de"		"Vorschau"
+	}
+
+	"preview_unavailable"
+	{
+		"de"		"Vorschau nicht verfügbar"
+	}
+
+	"functions"
+	{
+		"de"		"Funktionen"
+	}
+
+	"info"
+	{
+		"de"		"Info"
+	}
+
+	"admin_panel"
+	{
+		"de"		"Admin-Panel"
+	}
+
+	"Back"
+	{
+		"de"		"Zurück"
+	}
+
+	"Exit"
+	{
+		"de"		"Beenden"
+	}
+	
+	"NotEnoughCredits"
+	{
+		"de"		"{green}[Shop] {default}Nicht genug Credits!"
+	}
+
+	"PreviewIn"
+	{
+		"de"		"{green}[Shop] {default}Die Vorschau ist in {1} Sek. verfügbar!"
+	}
+
+	"DataLoaded"
+	{
+		"de"		"{green}[Shop] {default}Deine Shop-Daten wurden geladen! Gib {green}!{1}{default} ein, um den Shop zu öffnen!"
+	}
+
+	"DataLoaded2"
+	{
+		"de"		"{green}[Shop] {default}Deine Shop-Daten wurden geladen!"
+	}
+
+	"DataLoading"
+	{
+		"de"		"{green}[Shop] {default}Deine Daten werden geladen!"
+	}
+
+	"You Buy Sure"
+	{
+		"de"		"Möchtest du dieses Item wirklich kaufen?"
+	}
+
+	"You Sell Sure"
+	{
+		"de"		"Möchtest du dieses Item wirklich verkaufen?"
+	}
+
+	"confirm_luck"
+	{
+		"de"		"Möchtest du wirklich {1} Credits ausgeben, um dein Glück zu versuchen?"
+	}
+
+	"y."
+	{
+		"de"		"J."
+	}
+
+	"d."
+	{
+		"de"		"T."
+	}
+
+	"h."
+	{
+		"de"		"Std."
+	}
+
+	"m."
+	{
+		"de"		"Min."
+	}
+
+	"s."
+	{
+		"de"		"Sek."
+	}
+}
