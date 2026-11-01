@@ -494,4 +494,34 @@
 	{
 		"chi"		"秒"
 	}
+
+	"credits_usage"
+	{
+		"chi"		"用法：{1} <userid|name|uniqueid> <credits>"
+	}
+
+	"count_1_credit"
+	{
+		"chi"		"1 积分"
+	}
+
+	"count_credits"
+	{
+		"chi"		"{1} 积分"
+	}
+
+	"count_hundred_credits"
+	{
+		"chi"		"一百积分"
+	}
+
+	"count_thousand_credits"
+	{
+		"chi"		"一千积分"
+	}
+
+	"count_million_credits"
+	{
+		"chi"		"一百万积分"
+	}
 }

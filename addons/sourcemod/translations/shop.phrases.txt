@@ -522,4 +522,36 @@
 	{
 		"en"		"sec."
 	}
+
+	"credits_usage"
+	{
+		"#format"	"{1:s}"
+		"en"		"Usage: {1} <userid|name|uniqueid> <credits>"
+	}
+
+	"count_1_credit"
+	{
+		"en"		"1 credit"
+	}
+
+	"count_credits"
+	{
+		"#format"	"{1:i}"
+		"en"		"{1} credits"
+	}
+
+	"count_hundred_credits"
+	{
+		"en"		"Hundred credits"
+	}
+
+	"count_thousand_credits"
+	{
+		"en"		"Thousand credits"
+	}
+
+	"count_million_credits"
+	{
+		"en"		"Million credits"
+	}
 }

@@ -492,4 +492,34 @@
 	{
 		"ru"		"сек."
 	}
+
+	"credits_usage"
+	{
+		"ru"		"Использование: {1} <userid|name|uniqueid> <credits>"
+	}
+
+	"count_1_credit"
+	{
+		"ru"		"1 кредит"
+	}
+
+	"count_credits"
+	{
+		"ru"		"{1} кредитов"
+	}
+
+	"count_hundred_credits"
+	{
+		"ru"		"Сто кредитов"
+	}
+
+	"count_thousand_credits"
+	{
+		"ru"		"Тысяча кредитов"
+	}
+
+	"count_million_credits"
+	{
+		"ru"		"Миллион кредитов"
+	}
 }

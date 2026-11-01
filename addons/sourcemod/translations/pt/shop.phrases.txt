@@ -494,4 +494,34 @@
 	{
 		"pt"		"seg."
 	}
+
+	"credits_usage"
+	{
+		"pt"		"Uso: {1} <userid|name|uniqueid> <credits>"
+	}
+
+	"count_1_credit"
+	{
+		"pt"		"1 crédito"
+	}
+
+	"count_credits"
+	{
+		"pt"		"{1} créditos"
+	}
+
+	"count_hundred_credits"
+	{
+		"pt"		"Cem créditos"
+	}
+
+	"count_thousand_credits"
+	{
+		"pt"		"Mil créditos"
+	}
+
+	"count_million_credits"
+	{
+		"pt"		"Um milhão de créditos"
+	}
 }

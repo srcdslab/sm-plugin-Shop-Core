@@ -494,4 +494,34 @@
 	{
 		"de"		"Sek."
 	}
+
+	"credits_usage"
+	{
+		"de"		"Verwendung: {1} <userid|name|uniqueid> <credits>"
+	}
+
+	"count_1_credit"
+	{
+		"de"		"1 Credit"
+	}
+
+	"count_credits"
+	{
+		"de"		"{1} Credits"
+	}
+
+	"count_hundred_credits"
+	{
+		"de"		"Hundert Credits"
+	}
+
+	"count_thousand_credits"
+	{
+		"de"		"Tausend Credits"
+	}
+
+	"count_million_credits"
+	{
+		"de"		"Eine Million Credits"
+	}
 }
