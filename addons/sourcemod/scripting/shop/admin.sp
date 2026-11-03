@@ -14,6 +14,7 @@ enum struct AdminEnum
 AdminEnum g_iOpt[MAXPLAYERS+1];
 
 Menu count_menu;
+bool count_menu_phrases;
 
 /**
  * For SM 1.10
@@ -96,7 +97,8 @@ void Admin_UnregisterMe(Handle hPlugin)
 
 void Admin_OnSettingsLoad(KeyValues kv)
 {
-	count_menu = new Menu(Admin_MenuCount_Handler, MENU_ACTIONS_DEFAULT|MenuAction_Display);
+	count_menu_phrases = false;
+	count_menu = new Menu(Admin_MenuCount_Handler, MENU_ACTIONS_DEFAULT|MenuAction_Display|MenuAction_DisplayItem);
 	
 	if (kv.JumpToKey("Count_Menu", false))
 	{
@@ -124,13 +126,15 @@ void Admin_OnSettingsLoad(KeyValues kv)
 	
 	if (!count_menu.ItemCount)
 	{
-		count_menu.AddItem("1", "1 credit");
-		count_menu.AddItem("10", "10 credits");
-		count_menu.AddItem("100", "Hundred credits");
-		count_menu.AddItem("1000", "Thousand credits");
-		count_menu.AddItem("10000", "10000 credits");
-		count_menu.AddItem("100000", "100000 credits");
-		count_menu.AddItem("1000000", "Million credits");
+		// Default items hold a phrase key, translated in MenuAction_DisplayItem
+		count_menu_phrases = true;
+		count_menu.AddItem("1", "count_1_credit");
+		count_menu.AddItem("10", "count_credits");
+		count_menu.AddItem("100", "count_hundred_credits");
+		count_menu.AddItem("1000", "count_thousand_credits");
+		count_menu.AddItem("10000", "count_credits");
+		count_menu.AddItem("100000", "count_credits");
+		count_menu.AddItem("1000000", "count_million_credits");
 	}
 }
 
@@ -163,13 +167,27 @@ public int Admin_MenuCount_Handler(Menu menu, MenuAction action, int param1, int
 				}
 			}
 		}
+		case MenuAction_DisplayItem :
+		{
+			if (!count_menu_phrases)
+			{
+				return 0;
+			}
+			
+			char info[16], phrase[32], buffer[SHOP_MAX_STRING_LENGTH];
+			menu.GetItem(param2, info, sizeof(info), _, phrase, sizeof(phrase));
+			
+			// Only "count_credits" prints the amount
+			FormatEx(buffer, sizeof(buffer), "%T", phrase, param1, StringToInt(info));
+			return RedrawMenuItem(buffer);
+		}
 		case MenuAction_Select :
 		{
 			int target = GetClientOfUserId(g_iOpt[param1].AdminTarget);
 			
 			if (!target)
 			{
-				CPrintToChat(param1, "target_left_game");
+				CPrintToChat(param1, "%t", "target_left_game");
 				Admin_ShowMenu(param1);
 				return 0;
 			}
@@ -330,7 +348,7 @@ public int Admin_Menu_Handler(Menu menu, MenuAction action, int param1, int para
 			
 			if (!Admin_ShowTargetsMenu(param1))
 			{
-				CPrintToChat(param1, "no_targets");
+				CPrintToChat(param1, "%t", "no_targets");
 				Admin_ShowMenu(param1, GetMenuSelectionPosition());
 			}
 		}
@@ -384,7 +402,7 @@ public int Admin_TargetsMenu_Handler(Menu menu, MenuAction action, int param1, i
 			
 			if (!target)
 			{
-				CPrintToChat(param1, "target_left_game");
+				CPrintToChat(param1, "%t", "target_left_game");
 				Admin_ShowTargetsMenu(param1, GetMenuSelectionPosition());
 				return 0;
 			}

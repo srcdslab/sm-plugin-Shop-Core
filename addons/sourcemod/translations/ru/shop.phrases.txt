@@ -72,7 +72,7 @@
 
 	"IncorrectCredits"
 	{
-		"ru"		"Не верное количество кредитов!"
+		"ru"		"Неверное количество кредитов!"
 	}
 
 	"credits_being_transfered"
@@ -92,7 +92,7 @@
 
 	"credits_to_transfer_commission"
 	{
-		"ru"		"Комиссия: {1} кредит"
+		"ru"		"Комиссия: {1} кредит(-ов)"
 	}
 
 	"transfer_credits_left"
@@ -102,7 +102,7 @@
 
 	"need_positive"
 	{
-		"ru"		"Нехватает {1} кредит"
+		"ru"		"Не хватает {1} кредит(-ов)"
 	}
 
 	"confirm"
@@ -167,16 +167,16 @@
 
 	"give_credits_success"
 	{
-		"ru"		"{green}[Shop]{default} {green}{2}{default} получил(и) {1} кредит!"
+		"ru"		"{green}[Shop]{default} Вы выдали {1} кредит(-ов) игроку {green}{2}{default}!"
 	}
 
 	"remove_credits_success"
 	{
-		"ru"		"{green}[Shop]{default} Вы забрали {1} кредит у {green}{2}{default}!"
+		"ru"		"{green}[Shop]{default} Вы забрали {1} кредит(-ов) у {green}{2}{default}!"
 	}
 	"set_credits_success"
 	{
-		"ru"		"{green}[Shop]{default} Вы установили {1} кредит игроку {green}{2}{default}!"
+		"ru"		"{green}[Shop]{default} Вы установили {1} кредит(-ов) игроку {green}{2}{default}!"
 	}
 
 	"set_you_credits"
@@ -216,7 +216,7 @@
 
 	"NothingToLuck"
 	{
-		"ru"		"{green}[Shop]{default} Нет ничего, что вы могли бы выйграть!"
+		"ru"		"{green}[Shop]{default} Нет ничего, что вы могли бы выиграть!"
 	}
 
 	"Looser"
@@ -231,7 +231,7 @@
 
 	"ItemElapsed"
 	{
-		"ru"		"{green}[Shop]{default} Срок действия {green}\"{2}\"{default} из категории {green}\"{1}\"{default} истекло!"
+		"ru"		"{green}[Shop]{default} Срок действия {green}\"{2}\"{default} из категории {green}\"{1}\"{default} истек!"
 	}
 
 	"trans_credits"
@@ -435,7 +435,7 @@
 
 	"PreviewIn"
 	{
-		"ru"		"{green}[Shop] {default}Превью будет доступен через {1} сек.!"
+		"ru"		"{green}[Shop] {default}Превью будет доступно через {1} сек.!"
 	}
 
 	"DataLoaded"
@@ -455,12 +455,12 @@
 
 	"You Buy Sure"
 	{
-		"ru"		"Вы уверены что хотите купить этот предмет?"
+		"ru"		"Вы уверены, что хотите купить этот предмет?"
 	}
 
 	"You Sell Sure"
 	{
-		"ru"		"Вы уверены что хотите продать этот предмет?"
+		"ru"		"Вы уверены, что хотите продать этот предмет?"
 	}
 
 	"confirm_luck"
@@ -491,5 +491,35 @@
 	"s."
 	{
 		"ru"		"сек."
+	}
+
+	"credits_usage"
+	{
+		"ru"		"Использование: {1} <userid|name|uniqueid> <credits>"
+	}
+
+	"count_1_credit"
+	{
+		"ru"		"1 кредит"
+	}
+
+	"count_credits"
+	{
+		"ru"		"{1} кредитов"
+	}
+
+	"count_hundred_credits"
+	{
+		"ru"		"Сто кредитов"
+	}
+
+	"count_thousand_credits"
+	{
+		"ru"		"Тысяча кредитов"
+	}
+
+	"count_million_credits"
+	{
+		"ru"		"Миллион кредитов"
 	}
 }
