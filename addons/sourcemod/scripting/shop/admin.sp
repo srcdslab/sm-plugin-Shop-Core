@@ -526,11 +526,11 @@ public int Admin_ItemsMenu_Handler(Menu menu, MenuAction action, int param1, int
 			{
 				case GIVE_ITEMS :
 				{
-					menu.SetTitle("%t\n ", "give_items");
+					menu.SetTitle("%T\n ", "give_items", param1);
 				}
 				case TAKE_ITEMS :
 				{
-					menu.SetTitle("%t\n ", "take_items");
+					menu.SetTitle("%T\n ", "take_items", param1);
 				}
 			}
 		}
