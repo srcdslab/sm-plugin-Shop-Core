@@ -1,0 +1,527 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"it"		"{green}[Shop]{default} Non hai accesso a questo comando!"
+	}
+
+	"TargetNotFound"
+	{
+		"it"		"{green}[Shop]{default} Bersaglio {green}{1}{default} non trovato!"
+	}
+
+	"select_target"
+	{
+		"it"		"Seleziona un giocatore:"
+	}
+
+	"select_category"
+	{
+		"it"		"Seleziona una categoria:"
+	}
+
+	"select_item"
+	{
+		"it"		"Seleziona un oggetto:"
+	}
+
+	"no_targets"
+	{
+		"it"		"{green}[Shop]{default} Nessun bersaglio valido!"
+	}
+
+	"target_left_game"
+	{
+		"it"		"{green}[Shop]{default} Il giocatore ha lasciato la partita!"
+	}
+
+	"trans_credits_operation"
+	{
+		"it"		"Scrivi in chat la quantità di crediti da trasferire\no \"cancel\" per annullare l'operazione!"
+	}
+
+	"TransferSuccess"
+	{
+		"it"		"{green}[Shop]{default} Hai inviato con successo {green}{1}{default} crediti a {green}{2}{default}!"
+	}
+
+	"ReceiveSuccess"
+	{
+		"it"		"{green}[Shop]{default} Hai ricevuto con successo {green}{1}{default} crediti da {green}{2}{default}!"
+	}
+
+	"ReceiveCommission"
+	{
+		"it"		"{green}[Shop]{default} Commissione trattenuta: {green}{1} {default}crediti"
+	}
+
+	"receive_item"
+	{
+		"it"		"{green}[Shop]{default} Hai ricevuto {green}\"{3}\"{default} nella categoria {green}\"{2}\"{default} da {green}{1}{default}!"
+	}
+
+	"already_has"
+	{
+		"it"		"{green}[Shop]{default} Il giocatore {green}{1}{default} possiede già questo oggetto!"
+	}
+
+	"no_item"
+	{
+		"it"		"{green}[Shop]{default} Questo oggetto non è nel tuo inventario!"
+	}
+
+	"IncorrectCredits"
+	{
+		"it"		"Quantità di crediti non valida!"
+	}
+
+	"credits_being_transfered"
+	{
+		"it"		"Quantità di crediti: {1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"it"		"In invio: {1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"it"		"Costo del trasferimento: {1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"it"		"Commissione: {1} crediti"
+	}
+
+	"transfer_credits_left"
+	{
+		"it"		"Rimanenti: {1}"
+	}
+
+	"need_positive"
+	{
+		"it"		"Ti mancano {1} crediti"
+	}
+
+	"confirm"
+	{
+		"it"		"Conferma"
+	}
+
+	"cancel"
+	{
+		"it"		"Annulla"
+	}
+
+	"transfer"
+	{
+		"it"		"Trasferisci"
+	}
+
+	"ItemTransferMenu"
+	{
+		"it"		"Trasferisci oggetto"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"it"		"Trasferisci oggetto\na {1}"
+	}
+
+	"give_credits"
+	{
+		"it"		"Dai crediti"
+	}
+
+	"take_credits"
+	{
+		"it"		"Togli crediti"
+	}
+
+	"set_credits"
+	{
+		"it"		"Imposta crediti"
+	}
+
+	"give_items"
+	{
+		"it"		"Dai oggetti"
+	}
+
+	"take_items"
+	{
+		"it"		"Togli oggetti"
+	}
+
+	"give_item_success"
+	{
+		"it"		"{green}[Shop]{default} Hai dato l'oggetto con successo!"
+	}
+
+	"take_item_success"
+	{
+		"it"		"{green}[Shop]{default} Hai tolto l'oggetto con successo!"
+	}
+
+	"give_credits_success"
+	{
+		"it"		"{green}[Shop]{default} Hai inviato {1} crediti a {green}{2}{default}!"
+	}
+
+	"remove_credits_success"
+	{
+		"it"		"{green}[Shop]{default} Hai tolto {1} crediti a {green}{2}{default}!"
+	}
+
+	"set_credits_success"
+	{
+		"it"		"{green}[Shop]{default} Hai impostato {1} crediti per {green}{2}{default}!"
+	}
+
+	"set_you_credits"
+	{
+		"it"		"{green}[Shop]{default} Un admin ha impostato i tuoi crediti a {green}{1}{default}!"
+	}
+
+	"take_you_credits"
+	{
+		"it"		"{green}[Shop]{default} Un admin ti ha tolto {green}{1}{default} crediti!"
+	}
+
+	"give_you_credits"
+	{
+		"it"		"{green}[Shop]{default} Un admin ti ha dato {green}{1}{default} crediti!"
+	}
+
+	"EmptyInventory"
+	{
+		"it"		"{green}[Shop]{default} Il tuo inventario è vuoto!"
+	}
+
+	"EmptyShop"
+	{
+		"it"		"{green}[Shop]{default} Il negozio è vuoto!"
+	}
+
+	"EmptyCategory"
+	{
+		"it"		"{green}[Shop]{default} La categoria è vuota!"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"it"		"La categoria è vuota!"
+	}
+
+	"NothingToLuck"
+	{
+		"it"		"{green}[Shop]{default} Non c'è nulla da vincere!"
+	}
+
+	"Looser"
+	{
+		"it"		"{green}[Shop]{default} Niente fortuna! Non hai vinto nulla :("
+	}
+
+	"Lucker"
+	{
+		"it"		"{green}[Shop]{default} È il tuo giorno fortunato :). Hai vinto {green}\"{2}\"{default} nella categoria {green}\"{1}\"{default}."
+	}
+
+	"ItemElapsed"
+	{
+		"it"		"{green}[Shop]{default} L'oggetto {green}\"{2}\"{default} della categoria {green}\"{1}\"{default} è scaduto!"
+	}
+
+	"trans_credits"
+	{
+		"it"		"Trasferisci crediti"
+	}
+
+	"trans_credits_commision"
+	{
+		"it"		"[Commissione: {1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"it"		"[Prezzo: {1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"it"		"[Disattivato]"
+	}
+
+	"luck_disabled"
+	{
+		"it"		"[Disattivato]"
+	}
+
+	"try_luck"
+	{
+		"it"		"Tenta la fortuna"
+	}
+
+	"luck_credits_chance"
+	{
+		"it"		"[Probabilità: {2}%%|Prezzo: {1}]"
+	}
+
+	"Type"
+	{
+		"it"		"Tipo"
+	}
+
+	"None"
+	{
+		"it"		"Nessuno"
+	}
+
+	"Finite"
+	{
+		"it"		"Limitato"
+	}
+
+	"Togglable"
+	{
+		"it"		"Attivabile"
+	}
+
+	"BuyOnly"
+	{
+		"it"		"Solo acquisto"
+	}
+
+	"Price"
+	{
+		"it"		"Prezzo"
+	}
+
+	"Sell Price"
+	{
+		"it"		"Prezzo di vendita"
+	}
+
+	"absolute_sellprice"
+	{
+		"it"		"Valore di rivendita"
+	}
+
+	"Free"
+	{
+		"it"		"Gratis"
+	}
+
+	"Unsaleable"
+	{
+		"it"		"Non vendibile"
+	}
+
+	"Count"
+	{
+		"it"		"Quantità"
+	}
+
+	"duration"
+	{
+		"it"		"Durata"
+	}
+
+	"forever"
+	{
+		"it"		"Per sempre"
+	}
+
+	"timeleft"
+	{
+		"it"		"Tempo rimasto"
+	}
+
+	"You have"
+	{
+		"it"		"Hai"
+	}
+
+	"MainMenuTitle"
+	{
+		"it"		"Negozio"
+	}
+
+	"Shop"
+	{
+		"it"		"Negozio"
+	}
+
+	"credits"
+	{
+		"it"		"Crediti: {1}"
+	}
+
+	"buy"
+	{
+		"it"		"Compra"
+	}
+
+	"buy_not"
+	{
+		"it"		"Compra [Crediti insufficienti]"
+	}
+
+	"sell"
+	{
+		"it"		"Vendi"
+	}
+
+	"inventory"
+	{
+		"it"		"Inventario"
+	}
+
+	"use"
+	{
+		"it"		"Usa"
+	}
+
+	"ToggleOn"
+	{
+		"it"		"Attiva"
+	}
+
+	"ToggleOff"
+	{
+		"it"		"Disattiva"
+	}
+
+	"preview"
+	{
+		"it"		"Anteprima"
+	}
+
+	"preview_unavailable"
+	{
+		"it"		"Anteprima non disponibile"
+	}
+
+	"functions"
+	{
+		"it"		"Funzioni"
+	}
+
+	"info"
+	{
+		"it"		"Info"
+	}
+
+	"admin_panel"
+	{
+		"it"		"Pannello admin"
+	}
+
+	"Back"
+	{
+		"it"		"Indietro"
+	}
+
+	"Exit"
+	{
+		"it"		"Esci"
+	}
+
+	"NotEnoughCredits"
+	{
+		"it"		"{green}[Shop] {default}Crediti insufficienti!"
+	}
+
+	"PreviewIn"
+	{
+		"it"		"{green}[Shop] {default}L'anteprima sarà disponibile tra {1} sec.!"
+	}
+
+	"DataLoaded"
+	{
+		"it"		"{green}[Shop] {default}I dati del tuo negozio sono stati caricati! Scrivi {green}!{1}{default} per aprire il negozio!"
+	}
+
+	"DataLoaded2"
+	{
+		"it"		"{green}[Shop] {default}I dati del tuo negozio sono stati caricati!"
+	}
+
+	"DataLoading"
+	{
+		"it"		"{green}[Shop] {default}I tuoi dati vengono caricati!"
+	}
+
+	"You Buy Sure"
+	{
+		"it"		"Vuoi davvero comprare questo oggetto?"
+	}
+
+	"You Sell Sure"
+	{
+		"it"		"Vuoi davvero vendere questo oggetto?"
+	}
+
+	"confirm_luck"
+	{
+		"it"		"Vuoi davvero spendere {1} crediti per tentare la fortuna?"
+	}
+
+	"y."
+	{
+		"it"		"a."
+	}
+
+	"d."
+	{
+		"it"		"g."
+	}
+
+	"h."
+	{
+		"it"		"h"
+	}
+
+	"m."
+	{
+		"it"		"min."
+	}
+
+	"s."
+	{
+		"it"		"sec."
+	}
+
+	"credits_usage"
+	{
+		"it"		"Uso: {1} <userid|nome|uniqueid> <crediti>"
+	}
+
+	"count_1_credit"
+	{
+		"it"		"1 credito"
+	}
+
+	"count_credits"
+	{
+		"it"		"{1} crediti"
+	}
+
+	"count_hundred_credits"
+	{
+		"it"		"Cento crediti"
+	}
+
+	"count_thousand_credits"
+	{
+		"it"		"Mille crediti"
+	}
+
+	"count_million_credits"
+	{
+		"it"		"Un milione di crediti"
+	}
+}
