@@ -1,0 +1,527 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"zho"		"{green}[Shop]{default} 你沒有使用此指令的權限!"
+	}
+
+	"TargetNotFound"
+	{
+		"zho"		"{green}[Shop]{default} 找不到目標 {green}{1}{default}!"
+	}
+
+	"select_target"
+	{
+		"zho"		"選擇玩家:"
+	}
+
+	"select_category"
+	{
+		"zho"		"選擇分類:"
+	}
+
+	"select_item"
+	{
+		"zho"		"選擇物品:"
+	}
+
+	"no_targets"
+	{
+		"zho"		"{green}[Shop]{default} 沒有符合條件的目標!"
+	}
+
+	"target_left_game"
+	{
+		"zho"		"{green}[Shop]{default} 該玩家已離開遊戲!"
+	}
+
+	"trans_credits_operation"
+	{
+		"zho"		"請在聊天中輸入要轉移的點數數量\n或輸入 \"cancel\" 取消操作!"
+	}
+
+	"TransferSuccess"
+	{
+		"zho"		"{green}[Shop]{default} 你已成功向 {green}{2}{default} 發送 {green}{1}{default} 點數!"
+	}
+
+	"ReceiveSuccess"
+	{
+		"zho"		"{green}[Shop]{default} 你已成功收到來自 {green}{2}{default} 的 {green}{1}{default} 點數!"
+	}
+
+	"ReceiveCommission"
+	{
+		"zho"		"{green}[Shop]{default} 已扣除手續費: {green}{1} {default}點數"
+	}
+
+	"receive_item"
+	{
+		"zho"		"{green}[Shop]{default} 你從 {green}{1}{default} 收到了分類 {green}\"{2}\"{default} 中的 {green}\"{3}\"{default}!"
+	}
+
+	"already_has"
+	{
+		"zho"		"{green}[Shop]{default} 玩家 {green}{1}{default} 已擁有此物品!"
+	}
+
+	"no_item"
+	{
+		"zho"		"{green}[Shop]{default} 此物品不在你的背包中!"
+	}
+
+	"IncorrectCredits"
+	{
+		"zho"		"點數數量無效!"
+	}
+
+	"credits_being_transfered"
+	{
+		"zho"		"點數數量: {1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"zho"		"發送中: {1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"zho"		"轉移費用: {1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"zho"		"手續費: {1} 點數"
+	}
+
+	"transfer_credits_left"
+	{
+		"zho"		"剩餘: {1}"
+	}
+
+	"need_positive"
+	{
+		"zho"		"你還需要 {1} 點數"
+	}
+
+	"confirm"
+	{
+		"zho"		"確認"
+	}
+
+	"cancel"
+	{
+		"zho"		"取消"
+	}
+
+	"transfer"
+	{
+		"zho"		"轉移"
+	}
+
+	"ItemTransferMenu"
+	{
+		"zho"		"轉移物品"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"zho"		"轉移物品\n給 {1}"
+	}
+
+	"give_credits"
+	{
+		"zho"		"給予點數"
+	}
+
+	"take_credits"
+	{
+		"zho"		"扣除點數"
+	}
+
+	"set_credits"
+	{
+		"zho"		"設定點數"
+	}
+
+	"give_items"
+	{
+		"zho"		"給予物品"
+	}
+
+	"take_items"
+	{
+		"zho"		"移除物品"
+	}
+
+	"give_item_success"
+	{
+		"zho"		"{green}[Shop]{default} 已成功給予物品!"
+	}
+
+	"take_item_success"
+	{
+		"zho"		"{green}[Shop]{default} 已成功移除物品!"
+	}
+
+	"give_credits_success"
+	{
+		"zho"		"{green}[Shop]{default} 你已向 {green}{2}{default} 發送 {1} 點數!"
+	}
+
+	"remove_credits_success"
+	{
+		"zho"		"{green}[Shop]{default} 你已從 {green}{2}{default} 扣除 {1} 點數!"
+	}
+
+	"set_credits_success"
+	{
+		"zho"		"{green}[Shop]{default} 你已將 {green}{2}{default} 的點數設定為 {1}!"
+	}
+
+	"set_you_credits"
+	{
+		"zho"		"{green}[Shop]{default} 管理員已將你的點數設定為 {green}{1}{default}!"
+	}
+
+	"take_you_credits"
+	{
+		"zho"		"{green}[Shop]{default} 管理員扣除了你 {green}{1}{default} 點數!"
+	}
+
+	"give_you_credits"
+	{
+		"zho"		"{green}[Shop]{default} 管理員給了你 {green}{1}{default} 點數!"
+	}
+
+	"EmptyInventory"
+	{
+		"zho"		"{green}[Shop]{default} 你的背包是空的!"
+	}
+
+	"EmptyShop"
+	{
+		"zho"		"{green}[Shop]{default} 商店是空的!"
+	}
+
+	"EmptyCategory"
+	{
+		"zho"		"{green}[Shop]{default} 此分類是空的!"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"zho"		"此分類是空的!"
+	}
+
+	"NothingToLuck"
+	{
+		"zho"		"{green}[Shop]{default} 沒有可以贏取的東西!"
+	}
+
+	"Looser"
+	{
+		"zho"		"{green}[Shop]{default} 運氣不好! 什麼都沒抽到 :("
+	}
+
+	"Lucker"
+	{
+		"zho"		"{green}[Shop]{default} 今天運氣真好 :). 你在分類 {green}\"{1}\"{default} 中獲得了 {green}\"{2}\"{default}."
+	}
+
+	"ItemElapsed"
+	{
+		"zho"		"{green}[Shop]{default} 分類 {green}\"{1}\"{default} 中的 {green}\"{2}\"{default} 已過期!"
+	}
+
+	"trans_credits"
+	{
+		"zho"		"轉移點數"
+	}
+
+	"trans_credits_commision"
+	{
+		"zho"		"[手續費: {1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"zho"		"[價格: {1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"zho"		"[已停用]"
+	}
+
+	"luck_disabled"
+	{
+		"zho"		"[已停用]"
+	}
+
+	"try_luck"
+	{
+		"zho"		"試試手氣"
+	}
+
+	"luck_credits_chance"
+	{
+		"zho"		"[機率: {2}%%|價格: {1}]"
+	}
+
+	"Type"
+	{
+		"zho"		"類型"
+	}
+
+	"None"
+	{
+		"zho"		"無"
+	}
+
+	"Finite"
+	{
+		"zho"		"限量"
+	}
+
+	"Togglable"
+	{
+		"zho"		"可切換"
+	}
+
+	"BuyOnly"
+	{
+		"zho"		"僅限購買"
+	}
+
+	"Price"
+	{
+		"zho"		"價格"
+	}
+
+	"Sell Price"
+	{
+		"zho"		"出售價格"
+	}
+
+	"absolute_sellprice"
+	{
+		"zho"		"轉售價值"
+	}
+
+	"Free"
+	{
+		"zho"		"免費"
+	}
+
+	"Unsaleable"
+	{
+		"zho"		"無法出售"
+	}
+
+	"Count"
+	{
+		"zho"		"數量"
+	}
+
+	"duration"
+	{
+		"zho"		"持續時間"
+	}
+
+	"forever"
+	{
+		"zho"		"永久"
+	}
+
+	"timeleft"
+	{
+		"zho"		"剩餘時間"
+	}
+
+	"You have"
+	{
+		"zho"		"你擁有"
+	}
+
+	"MainMenuTitle"
+	{
+		"zho"		"商店"
+	}
+
+	"Shop"
+	{
+		"zho"		"商店"
+	}
+
+	"credits"
+	{
+		"zho"		"點數: {1}"
+	}
+
+	"buy"
+	{
+		"zho"		"購買"
+	}
+
+	"buy_not"
+	{
+		"zho"		"購買 [點數不足]"
+	}
+
+	"sell"
+	{
+		"zho"		"出售"
+	}
+
+	"inventory"
+	{
+		"zho"		"背包"
+	}
+
+	"use"
+	{
+		"zho"		"使用"
+	}
+
+	"ToggleOn"
+	{
+		"zho"		"開啟"
+	}
+
+	"ToggleOff"
+	{
+		"zho"		"關閉"
+	}
+
+	"preview"
+	{
+		"zho"		"預覽"
+	}
+
+	"preview_unavailable"
+	{
+		"zho"		"無法預覽"
+	}
+
+	"functions"
+	{
+		"zho"		"功能"
+	}
+
+	"info"
+	{
+		"zho"		"資訊"
+	}
+
+	"admin_panel"
+	{
+		"zho"		"管理員面板"
+	}
+
+	"Back"
+	{
+		"zho"		"返回"
+	}
+
+	"Exit"
+	{
+		"zho"		"離開"
+	}
+
+	"NotEnoughCredits"
+	{
+		"zho"		"{green}[Shop] {default}點數不足!"
+	}
+
+	"PreviewIn"
+	{
+		"zho"		"{green}[Shop] {default}預覽將在 {1} 秒後可用!"
+	}
+
+	"DataLoaded"
+	{
+		"zho"		"{green}[Shop] {default}你的商店資料已載入! 輸入 {green}!{1}{default} 開啟商店!"
+	}
+
+	"DataLoaded2"
+	{
+		"zho"		"{green}[Shop] {default}你的商店資料已載入!"
+	}
+
+	"DataLoading"
+	{
+		"zho"		"{green}[Shop] {default}正在載入你的資料!"
+	}
+
+	"You Buy Sure"
+	{
+		"zho"		"確定要購買此物品嗎?"
+	}
+
+	"You Sell Sure"
+	{
+		"zho"		"確定要出售此物品嗎?"
+	}
+
+	"confirm_luck"
+	{
+		"zho"		"確定要花費 {1} 點數試試手氣嗎?"
+	}
+
+	"y."
+	{
+		"zho"		"年"
+	}
+
+	"d."
+	{
+		"zho"		"天"
+	}
+
+	"h."
+	{
+		"zho"		"小時"
+	}
+
+	"m."
+	{
+		"zho"		"分鐘"
+	}
+
+	"s."
+	{
+		"zho"		"秒"
+	}
+
+	"credits_usage"
+	{
+		"zho"		"用法: {1} <userid|名稱|uniqueid> <點數>"
+	}
+
+	"count_1_credit"
+	{
+		"zho"		"1 點數"
+	}
+
+	"count_credits"
+	{
+		"zho"		"{1} 點數"
+	}
+
+	"count_hundred_credits"
+	{
+		"zho"		"一百點數"
+	}
+
+	"count_thousand_credits"
+	{
+		"zho"		"一千點數"
+	}
+
+	"count_million_credits"
+	{
+		"zho"		"一百萬點數"
+	}
+}

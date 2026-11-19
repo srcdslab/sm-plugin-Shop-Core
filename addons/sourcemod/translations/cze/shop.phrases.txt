@@ -1,0 +1,527 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"cze"		"{green}[Shop]{default} K tomuto příkazu nemáš přístup!"
+	}
+
+	"TargetNotFound"
+	{
+		"cze"		"{green}[Shop]{default} Cíl {green}{1}{default} nebyl nalezen!"
+	}
+
+	"select_target"
+	{
+		"cze"		"Vyber hráče:"
+	}
+
+	"select_category"
+	{
+		"cze"		"Vyber kategorii:"
+	}
+
+	"select_item"
+	{
+		"cze"		"Vyber předmět:"
+	}
+
+	"no_targets"
+	{
+		"cze"		"{green}[Shop]{default} Žádné vhodné cíle!"
+	}
+
+	"target_left_game"
+	{
+		"cze"		"{green}[Shop]{default} Hráč opustil hru!"
+	}
+
+	"trans_credits_operation"
+	{
+		"cze"		"Napiš do chatu počet kreditů k převodu\nnebo \"cancel\" pro zrušení operace!"
+	}
+
+	"TransferSuccess"
+	{
+		"cze"		"{green}[Shop]{default} Úspěšně jsi poslal {green}{1}{default} kreditů hráči {green}{2}{default}!"
+	}
+
+	"ReceiveSuccess"
+	{
+		"cze"		"{green}[Shop]{default} Úspěšně jsi obdržel {green}{1}{default} kreditů od hráče {green}{2}{default}!"
+	}
+
+	"ReceiveCommission"
+	{
+		"cze"		"{green}[Shop]{default} Stržený poplatek: {green}{1} {default}kreditů"
+	}
+
+	"receive_item"
+	{
+		"cze"		"{green}[Shop]{default} Obdržel jsi {green}\"{3}\"{default} v kategorii {green}\"{2}\"{default} od hráče {green}{1}{default}!"
+	}
+
+	"already_has"
+	{
+		"cze"		"{green}[Shop]{default} Hráč {green}{1}{default} už tento předmět má!"
+	}
+
+	"no_item"
+	{
+		"cze"		"{green}[Shop]{default} Tento předmět není ve tvém inventáři!"
+	}
+
+	"IncorrectCredits"
+	{
+		"cze"		"Neplatný počet kreditů!"
+	}
+
+	"credits_being_transfered"
+	{
+		"cze"		"Počet kreditů: {1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"cze"		"Odesíláno: {1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"cze"		"Cena převodu: {1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"cze"		"Poplatek: {1} kreditů"
+	}
+
+	"transfer_credits_left"
+	{
+		"cze"		"Zbývá: {1}"
+	}
+
+	"need_positive"
+	{
+		"cze"		"Chybí ti {1} kreditů"
+	}
+
+	"confirm"
+	{
+		"cze"		"Potvrdit"
+	}
+
+	"cancel"
+	{
+		"cze"		"Zrušit"
+	}
+
+	"transfer"
+	{
+		"cze"		"Převést"
+	}
+
+	"ItemTransferMenu"
+	{
+		"cze"		"Předat předmět"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"cze"		"Předat předmět\nhráči {1}"
+	}
+
+	"give_credits"
+	{
+		"cze"		"Dát kredity"
+	}
+
+	"take_credits"
+	{
+		"cze"		"Odebrat kredity"
+	}
+
+	"set_credits"
+	{
+		"cze"		"Nastavit kredity"
+	}
+
+	"give_items"
+	{
+		"cze"		"Dát předměty"
+	}
+
+	"take_items"
+	{
+		"cze"		"Odebrat předměty"
+	}
+
+	"give_item_success"
+	{
+		"cze"		"{green}[Shop]{default} Předmět byl úspěšně předán!"
+	}
+
+	"take_item_success"
+	{
+		"cze"		"{green}[Shop]{default} Předmět byl úspěšně odebrán!"
+	}
+
+	"give_credits_success"
+	{
+		"cze"		"{green}[Shop]{default} Poslal jsi {1} kreditů hráči {green}{2}{default}!"
+	}
+
+	"remove_credits_success"
+	{
+		"cze"		"{green}[Shop]{default} Odebral jsi {1} kreditů hráči {green}{2}{default}!"
+	}
+
+	"set_credits_success"
+	{
+		"cze"		"{green}[Shop]{default} Nastavil jsi hráči {green}{2}{default} {1} kreditů!"
+	}
+
+	"set_you_credits"
+	{
+		"cze"		"{green}[Shop]{default} Admin ti nastavil kredity na {green}{1}{default}!"
+	}
+
+	"take_you_credits"
+	{
+		"cze"		"{green}[Shop]{default} Admin ti odebral {green}{1}{default} kreditů!"
+	}
+
+	"give_you_credits"
+	{
+		"cze"		"{green}[Shop]{default} Admin ti dal {green}{1}{default} kreditů!"
+	}
+
+	"EmptyInventory"
+	{
+		"cze"		"{green}[Shop]{default} Tvůj inventář je prázdný!"
+	}
+
+	"EmptyShop"
+	{
+		"cze"		"{green}[Shop]{default} Obchod je prázdný!"
+	}
+
+	"EmptyCategory"
+	{
+		"cze"		"{green}[Shop]{default} Tato kategorie je prázdná!"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"cze"		"Tato kategorie je prázdná!"
+	}
+
+	"NothingToLuck"
+	{
+		"cze"		"{green}[Shop]{default} Není nic, co bys mohl vyhrát!"
+	}
+
+	"Looser"
+	{
+		"cze"		"{green}[Shop]{default} Smůla! Nic jsi nevyhrál :("
+	}
+
+	"Lucker"
+	{
+		"cze"		"{green}[Shop]{default} Máš šťastný den :). Vyhrál jsi {green}\"{2}\"{default} v kategorii {green}\"{1}\"{default}."
+	}
+
+	"ItemElapsed"
+	{
+		"cze"		"{green}[Shop]{default} Předmět {green}\"{2}\"{default} z kategorie {green}\"{1}\"{default} vypršel!"
+	}
+
+	"trans_credits"
+	{
+		"cze"		"Převést kredity"
+	}
+
+	"trans_credits_commision"
+	{
+		"cze"		"[Poplatek: {1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"cze"		"[Cena: {1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"cze"		"[Vypnuto]"
+	}
+
+	"luck_disabled"
+	{
+		"cze"		"[Vypnuto]"
+	}
+
+	"try_luck"
+	{
+		"cze"		"Zkus štěstí"
+	}
+
+	"luck_credits_chance"
+	{
+		"cze"		"[Šance: {2}%%|Cena: {1}]"
+	}
+
+	"Type"
+	{
+		"cze"		"Typ"
+	}
+
+	"None"
+	{
+		"cze"		"Žádný"
+	}
+
+	"Finite"
+	{
+		"cze"		"Omezený"
+	}
+
+	"Togglable"
+	{
+		"cze"		"Přepínatelný"
+	}
+
+	"BuyOnly"
+	{
+		"cze"		"Pouze koupě"
+	}
+
+	"Price"
+	{
+		"cze"		"Cena"
+	}
+
+	"Sell Price"
+	{
+		"cze"		"Prodejní cena"
+	}
+
+	"absolute_sellprice"
+	{
+		"cze"		"Výkupní hodnota"
+	}
+
+	"Free"
+	{
+		"cze"		"Zdarma"
+	}
+
+	"Unsaleable"
+	{
+		"cze"		"Neprodejné"
+	}
+
+	"Count"
+	{
+		"cze"		"Počet"
+	}
+
+	"duration"
+	{
+		"cze"		"Doba trvání"
+	}
+
+	"forever"
+	{
+		"cze"		"Navždy"
+	}
+
+	"timeleft"
+	{
+		"cze"		"Zbývající čas"
+	}
+
+	"You have"
+	{
+		"cze"		"Máš"
+	}
+
+	"MainMenuTitle"
+	{
+		"cze"		"Obchod"
+	}
+
+	"Shop"
+	{
+		"cze"		"Obchod"
+	}
+
+	"credits"
+	{
+		"cze"		"Kredity: {1}"
+	}
+
+	"buy"
+	{
+		"cze"		"Koupit"
+	}
+
+	"buy_not"
+	{
+		"cze"		"Koupit [Nedostatek kreditů]"
+	}
+
+	"sell"
+	{
+		"cze"		"Prodat"
+	}
+
+	"inventory"
+	{
+		"cze"		"Inventář"
+	}
+
+	"use"
+	{
+		"cze"		"Použít"
+	}
+
+	"ToggleOn"
+	{
+		"cze"		"Zapnout"
+	}
+
+	"ToggleOff"
+	{
+		"cze"		"Vypnout"
+	}
+
+	"preview"
+	{
+		"cze"		"Náhled"
+	}
+
+	"preview_unavailable"
+	{
+		"cze"		"Náhled není k dispozici"
+	}
+
+	"functions"
+	{
+		"cze"		"Funkce"
+	}
+
+	"info"
+	{
+		"cze"		"Info"
+	}
+
+	"admin_panel"
+	{
+		"cze"		"Admin panel"
+	}
+
+	"Back"
+	{
+		"cze"		"Zpět"
+	}
+
+	"Exit"
+	{
+		"cze"		"Zavřít"
+	}
+
+	"NotEnoughCredits"
+	{
+		"cze"		"{green}[Shop] {default}Nedostatek kreditů!"
+	}
+
+	"PreviewIn"
+	{
+		"cze"		"{green}[Shop] {default}Náhled bude dostupný za {1} s!"
+	}
+
+	"DataLoaded"
+	{
+		"cze"		"{green}[Shop] {default}Data tvého obchodu byla načtena! Napiš {green}!{1}{default} pro otevření obchodu!"
+	}
+
+	"DataLoaded2"
+	{
+		"cze"		"{green}[Shop] {default}Data tvého obchodu byla načtena!"
+	}
+
+	"DataLoading"
+	{
+		"cze"		"{green}[Shop] {default}Tvá data se načítají!"
+	}
+
+	"You Buy Sure"
+	{
+		"cze"		"Opravdu chceš koupit tento předmět?"
+	}
+
+	"You Sell Sure"
+	{
+		"cze"		"Opravdu chceš prodat tento předmět?"
+	}
+
+	"confirm_luck"
+	{
+		"cze"		"Opravdu chceš utratit {1} kreditů a zkusit štěstí?"
+	}
+
+	"y."
+	{
+		"cze"		"r."
+	}
+
+	"d."
+	{
+		"cze"		"d."
+	}
+
+	"h."
+	{
+		"cze"		"h"
+	}
+
+	"m."
+	{
+		"cze"		"min."
+	}
+
+	"s."
+	{
+		"cze"		"s"
+	}
+
+	"credits_usage"
+	{
+		"cze"		"Použití: {1} <userid|jméno|uniqueid> <kredity>"
+	}
+
+	"count_1_credit"
+	{
+		"cze"		"1 kredit"
+	}
+
+	"count_credits"
+	{
+		"cze"		"{1} kreditů"
+	}
+
+	"count_hundred_credits"
+	{
+		"cze"		"Sto kreditů"
+	}
+
+	"count_thousand_credits"
+	{
+		"cze"		"Tisíc kreditů"
+	}
+
+	"count_million_credits"
+	{
+		"cze"		"Milion kreditů"
+	}
+}

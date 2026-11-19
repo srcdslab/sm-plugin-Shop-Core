@@ -1,0 +1,527 @@
+"Phrases"
+{
+	"NoAccessToCommand"
+	{
+		"tr"		"{green}[Shop]{default} Bu komuta erişimin yok!"
+	}
+
+	"TargetNotFound"
+	{
+		"tr"		"{green}[Shop]{default} Hedef {green}{1}{default} bulunamadı!"
+	}
+
+	"select_target"
+	{
+		"tr"		"Oyuncu seç:"
+	}
+
+	"select_category"
+	{
+		"tr"		"Kategori seç:"
+	}
+
+	"select_item"
+	{
+		"tr"		"Eşya seç:"
+	}
+
+	"no_targets"
+	{
+		"tr"		"{green}[Shop]{default} Uygun hedef yok!"
+	}
+
+	"target_left_game"
+	{
+		"tr"		"{green}[Shop]{default} Oyuncu oyundan ayrıldı!"
+	}
+
+	"trans_credits_operation"
+	{
+		"tr"		"Aktarılacak kredi miktarını sohbete yaz\nveya işlemi iptal etmek için \"cancel\" yaz!"
+	}
+
+	"TransferSuccess"
+	{
+		"tr"		"{green}[Shop]{default} {green}{2}{default} oyuncusuna başarıyla {green}{1}{default} kredi gönderdin!"
+	}
+
+	"ReceiveSuccess"
+	{
+		"tr"		"{green}[Shop]{default} {green}{2}{default} oyuncusundan başarıyla {green}{1}{default} kredi aldın!"
+	}
+
+	"ReceiveCommission"
+	{
+		"tr"		"{green}[Shop]{default} Kesilen komisyon: {green}{1} {default}kredi"
+	}
+
+	"receive_item"
+	{
+		"tr"		"{green}[Shop]{default} {green}{1}{default} oyuncusundan {green}\"{2}\"{default} kategorisinde {green}\"{3}\"{default} aldın!"
+	}
+
+	"already_has"
+	{
+		"tr"		"{green}[Shop]{default} {green}{1}{default} oyuncusu bu eşyaya zaten sahip!"
+	}
+
+	"no_item"
+	{
+		"tr"		"{green}[Shop]{default} Bu eşya envanterinde yok!"
+	}
+
+	"IncorrectCredits"
+	{
+		"tr"		"Geçersiz kredi miktarı!"
+	}
+
+	"credits_being_transfered"
+	{
+		"tr"		"Kredi miktarı: {1}"
+	}
+
+	"credits_to_transfer"
+	{
+		"tr"		"Gönderilen: {1}"
+	}
+
+	"credits_to_transfer_price"
+	{
+		"tr"		"Transfer ücreti: {1}"
+	}
+
+	"credits_to_transfer_commission"
+	{
+		"tr"		"Komisyon: {1} kredi"
+	}
+
+	"transfer_credits_left"
+	{
+		"tr"		"Kalan: {1}"
+	}
+
+	"need_positive"
+	{
+		"tr"		"{1} krediye daha ihtiyacın var"
+	}
+
+	"confirm"
+	{
+		"tr"		"Onayla"
+	}
+
+	"cancel"
+	{
+		"tr"		"İptal"
+	}
+
+	"transfer"
+	{
+		"tr"		"Aktar"
+	}
+
+	"ItemTransferMenu"
+	{
+		"tr"		"Eşyayı aktar"
+	}
+
+	"ItemTransferMenu2"
+	{
+		"tr"		"Eşyayı aktar\nAlıcı: {1}"
+	}
+
+	"give_credits"
+	{
+		"tr"		"Kredi ver"
+	}
+
+	"take_credits"
+	{
+		"tr"		"Kredi al"
+	}
+
+	"set_credits"
+	{
+		"tr"		"Kredi ayarla"
+	}
+
+	"give_items"
+	{
+		"tr"		"Eşya ver"
+	}
+
+	"take_items"
+	{
+		"tr"		"Eşya al"
+	}
+
+	"give_item_success"
+	{
+		"tr"		"{green}[Shop]{default} Eşyayı başarıyla verdin!"
+	}
+
+	"take_item_success"
+	{
+		"tr"		"{green}[Shop]{default} Eşyayı başarıyla aldın!"
+	}
+
+	"give_credits_success"
+	{
+		"tr"		"{green}[Shop]{default} {green}{2}{default} oyuncusuna {1} kredi gönderdin!"
+	}
+
+	"remove_credits_success"
+	{
+		"tr"		"{green}[Shop]{default} {green}{2}{default} oyuncusundan {1} kredi aldın!"
+	}
+
+	"set_credits_success"
+	{
+		"tr"		"{green}[Shop]{default} {green}{2}{default} oyuncusunun kredisini {1} olarak ayarladın!"
+	}
+
+	"set_you_credits"
+	{
+		"tr"		"{green}[Shop]{default} Bir yönetici kredini {green}{1}{default} olarak ayarladı!"
+	}
+
+	"take_you_credits"
+	{
+		"tr"		"{green}[Shop]{default} Bir yönetici senden {green}{1}{default} kredi aldı!"
+	}
+
+	"give_you_credits"
+	{
+		"tr"		"{green}[Shop]{default} Bir yönetici sana {green}{1}{default} kredi verdi!"
+	}
+
+	"EmptyInventory"
+	{
+		"tr"		"{green}[Shop]{default} Envanterin boş!"
+	}
+
+	"EmptyShop"
+	{
+		"tr"		"{green}[Shop]{default} Mağaza boş!"
+	}
+
+	"EmptyCategory"
+	{
+		"tr"		"{green}[Shop]{default} Kategori boş!"
+	}
+
+	"MenuEmptyCategory"
+	{
+		"tr"		"Kategori boş!"
+	}
+
+	"NothingToLuck"
+	{
+		"tr"		"{green}[Shop]{default} Kazanabileceğin hiçbir şey yok!"
+	}
+
+	"Looser"
+	{
+		"tr"		"{green}[Shop]{default} Şanssızlık! Hiçbir şey kazanamadın :("
+	}
+
+	"Lucker"
+	{
+		"tr"		"{green}[Shop]{default} Bugün şanslı günün :). {green}\"{1}\"{default} kategorisinde {green}\"{2}\"{default} kazandın."
+	}
+
+	"ItemElapsed"
+	{
+		"tr"		"{green}[Shop]{default} {green}\"{1}\"{default} kategorisindeki {green}\"{2}\"{default} eşyasının süresi doldu!"
+	}
+
+	"trans_credits"
+	{
+		"tr"		"Kredi aktar"
+	}
+
+	"trans_credits_commision"
+	{
+		"tr"		"[Komisyon: {1}%%]"
+	}
+
+	"trans_credits_cost"
+	{
+		"tr"		"[Fiyat: {1}]"
+	}
+
+	"trans_credits_disabled"
+	{
+		"tr"		"[Devre dışı]"
+	}
+
+	"luck_disabled"
+	{
+		"tr"		"[Devre dışı]"
+	}
+
+	"try_luck"
+	{
+		"tr"		"Şansını dene"
+	}
+
+	"luck_credits_chance"
+	{
+		"tr"		"[Şans: {2}%%|Fiyat: {1}]"
+	}
+
+	"Type"
+	{
+		"tr"		"Tür"
+	}
+
+	"None"
+	{
+		"tr"		"Yok"
+	}
+
+	"Finite"
+	{
+		"tr"		"Sınırlı"
+	}
+
+	"Togglable"
+	{
+		"tr"		"Açılıp kapatılabilir"
+	}
+
+	"BuyOnly"
+	{
+		"tr"		"Sadece satın alma"
+	}
+
+	"Price"
+	{
+		"tr"		"Fiyat"
+	}
+
+	"Sell Price"
+	{
+		"tr"		"Satış fiyatı"
+	}
+
+	"absolute_sellprice"
+	{
+		"tr"		"Yeniden satış değeri"
+	}
+
+	"Free"
+	{
+		"tr"		"Ücretsiz"
+	}
+
+	"Unsaleable"
+	{
+		"tr"		"Satılamaz"
+	}
+
+	"Count"
+	{
+		"tr"		"Adet"
+	}
+
+	"duration"
+	{
+		"tr"		"Süre"
+	}
+
+	"forever"
+	{
+		"tr"		"Süresiz"
+	}
+
+	"timeleft"
+	{
+		"tr"		"Kalan süre"
+	}
+
+	"You have"
+	{
+		"tr"		"Sahipsin:"
+	}
+
+	"MainMenuTitle"
+	{
+		"tr"		"Mağaza"
+	}
+
+	"Shop"
+	{
+		"tr"		"Mağaza"
+	}
+
+	"credits"
+	{
+		"tr"		"Kredi: {1}"
+	}
+
+	"buy"
+	{
+		"tr"		"Satın al"
+	}
+
+	"buy_not"
+	{
+		"tr"		"Satın al [Yetersiz kredi]"
+	}
+
+	"sell"
+	{
+		"tr"		"Sat"
+	}
+
+	"inventory"
+	{
+		"tr"		"Envanter"
+	}
+
+	"use"
+	{
+		"tr"		"Kullan"
+	}
+
+	"ToggleOn"
+	{
+		"tr"		"Aç"
+	}
+
+	"ToggleOff"
+	{
+		"tr"		"Kapat"
+	}
+
+	"preview"
+	{
+		"tr"		"Önizleme"
+	}
+
+	"preview_unavailable"
+	{
+		"tr"		"Önizleme mevcut değil"
+	}
+
+	"functions"
+	{
+		"tr"		"Fonksiyonlar"
+	}
+
+	"info"
+	{
+		"tr"		"Bilgi"
+	}
+
+	"admin_panel"
+	{
+		"tr"		"Yönetici paneli"
+	}
+
+	"Back"
+	{
+		"tr"		"Geri"
+	}
+
+	"Exit"
+	{
+		"tr"		"Çıkış"
+	}
+
+	"NotEnoughCredits"
+	{
+		"tr"		"{green}[Shop] {default}Yetersiz kredi!"
+	}
+
+	"PreviewIn"
+	{
+		"tr"		"{green}[Shop] {default}Önizleme {1} sn. sonra kullanılabilir olacak!"
+	}
+
+	"DataLoaded"
+	{
+		"tr"		"{green}[Shop] {default}Mağaza verilerin yüklendi! Mağazayı açmak için {green}!{1}{default} yaz!"
+	}
+
+	"DataLoaded2"
+	{
+		"tr"		"{green}[Shop] {default}Mağaza verilerin yüklendi!"
+	}
+
+	"DataLoading"
+	{
+		"tr"		"{green}[Shop] {default}Verilerin yükleniyor!"
+	}
+
+	"You Buy Sure"
+	{
+		"tr"		"Bu eşyayı satın almak istediğine emin misin?"
+	}
+
+	"You Sell Sure"
+	{
+		"tr"		"Bu eşyayı satmak istediğine emin misin?"
+	}
+
+	"confirm_luck"
+	{
+		"tr"		"Şansını denemek için {1} kredi harcamak istediğine emin misin?"
+	}
+
+	"y."
+	{
+		"tr"		"y."
+	}
+
+	"d."
+	{
+		"tr"		"g."
+	}
+
+	"h."
+	{
+		"tr"		"s."
+	}
+
+	"m."
+	{
+		"tr"		"dk."
+	}
+
+	"s."
+	{
+		"tr"		"sn."
+	}
+
+	"credits_usage"
+	{
+		"tr"		"Kullanım: {1} <userid|isim|uniqueid> <kredi>"
+	}
+
+	"count_1_credit"
+	{
+		"tr"		"1 kredi"
+	}
+
+	"count_credits"
+	{
+		"tr"		"{1} kredi"
+	}
+
+	"count_hundred_credits"
+	{
+		"tr"		"Yüz kredi"
+	}
+
+	"count_thousand_credits"
+	{
+		"tr"		"Bin kredi"
+	}
+
+	"count_million_credits"
+	{
+		"tr"		"Bir milyon kredi"
+	}
+}
